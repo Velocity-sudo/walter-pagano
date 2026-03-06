@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CréditoTop — Plan Estratégico Q2 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #111E33;
+            --navy-light: #1A2A45;
+            --gold: #C8A24E;
+            --gold-light: #D4B06A;
+            --white: #FFFFFF;
+            --gray-100: #F4F5F7;
+            --gray-200: #E2E4E9;
+            --gray-400: #8B90A0;
+            --red: #E74C3C;
+            --green: #27AE60;
+            --blue: #3498DB;
+            --orange: #F39C12;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ═══ HERO ═══ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 40px;
+            background: radial-gradient(ellipse at 30% 20%, rgba(200, 162, 78, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(200, 162, 78, 0.05) 0%, transparent 50%),
+                var(--navy);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .hero-label {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--gray-400);
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 32px;
+            font-size: 13px;
+            color: var(--gray-400);
+        }
+
+        /* ═══ SECTIONS ═══ */
+        .section {
+            padding: 80px 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section.full-bleed {
+            max-width: 100%;
+            background: var(--navy-mid);
+            border-top: 1px solid rgba(200, 162, 78, 0.1);
+            border-bottom: 1px solid rgba(200, 162, 78, 0.1);
+        }
+
+        .section.full-bleed .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .section h2 span {
+            color: var(--gold);
+        }
+
+        .section-subtitle {
+            font-size: 15px;
+            color: var(--gray-400);
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+
+        /* ═══ METRIC CARDS ═══ */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .metric-card {
+            background: var(--navy-light);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .metric-card.highlight {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, rgba(200, 162, 78, 0.08), rgba(200, 162, 78, 0.02));
+        }
+
+        .metric-card.danger {
+            border-color: var(--red);
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.08), rgba(231, 76, 60, 0.02));
+        }
+
+        .metric-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .metric-value.gold {
+            color: var(--gold);
+        }
+
+        .metric-value.red {
+            color: var(--red);
+        }
+
+        .metric-value.green {
+            color: var(--green);
+        }
+
+        .metric-detail {
+            font-size: 12px;
+            color: var(--gray-400);
+        }
+
+        /* ═══ DATA TABLE ═══ */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 13px;
+        }
+
+        .data-table th {
+            text-align: left;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .data-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table .total-row {
+            background: rgba(200, 162, 78, 0.06);
+            font-weight: 700;
+        }
+
+        .data-table .total-row td {
+            border-top: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .data-table .highlight-cell {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .data-table .danger-cell {
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        .data-table .muted {
+            color: var(--gray-400);
+        }
+
+        /* ═══ COMPARISON ═══ */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 24px;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .comparison-col {
+            background: var(--navy-light);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .comparison-col.target {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, rgba(200, 162, 78, 0.06), transparent);
+        }
+
+        .comparison-col h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot.red {
+            background: var(--red);
+        }
+
+        .dot.green {
+            background: var(--green);
+        }
+
+        .comp-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 14px;
+        }
+
+        .comp-row:last-child {
+            border-bottom: none;
+        }
+
+        .comp-row .label {
+            color: var(--gray-400);
+        }
+
+        .comp-row .val {
+            font-weight: 700;
+        }
+
+        .comp-row .val.red {
+            color: var(--red);
+        }
+
+        .comp-row .val.green {
+            color: var(--green);
+        }
+
+        .comp-row .val.gold {
+            color: var(--gold);
+        }
+
+        .arrow-col {
+            font-size: 40px;
+            color: var(--gold);
+            text-align: center;
+        }
+
+        /* ═══ CAMPAIGN BOX ═══ */
+        .campaign-box {
+            background: var(--navy-light);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .campaign-box.active {
+            border-color: var(--green);
+        }
+
+        .campaign-box.pending {
+            border-color: var(--orange);
+            border-style: dashed;
+        }
+
+        .campaign-box h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .campaign-box .camp-status {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        .camp-status.active {
+            background: rgba(39, 174, 96, 0.15);
+            color: var(--green);
+        }
+
+        .camp-status.pending {
+            background: rgba(243, 156, 18, 0.15);
+            color: var(--orange);
+        }
+
+        .campaign-box .camp-desc {
+            font-size: 13px;
+            color: var(--gray-400);
+            margin-bottom: 16px;
+        }
+
+        .camp-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+        }
+
+        .camp-metric {
+            text-align: center;
+        }
+
+        .camp-metric .cm-val {
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .camp-metric .cm-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--gray-400);
+        }
+
+        /* ═══ PHASES ═══ */
+        .phase {
+            background: var(--navy-light);
+            border-radius: 16px;
+            padding: 36px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 4px;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .phase.p1::before {
+            background: var(--gold);
+        }
+
+        .phase.p2::before {
+            background: var(--blue);
+        }
+
+        .phase.p3::before {
+            background: var(--green);
+        }
+
+        .phase-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .phase-number {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .phase.p1 .phase-number {
+            color: var(--gold);
+        }
+
+        .phase.p2 .phase-number {
+            color: var(--blue);
+        }
+
+        .phase.p3 .phase-number {
+            color: var(--green);
+        }
+
+        .phase h3 {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .phase-timeline {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-400);
+            white-space: nowrap;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .action-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .action-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .action-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .action-card li {
+            font-size: 13px;
+            color: var(--gray-400);
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .action-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 12px;
+        }
+
+        .action-card li strong {
+            color: var(--white);
+        }
+
+        /* ═══ DECISIONS ═══ */
+        .decisions {
+            list-style: none;
+            padding: 0;
+            counter-reset: dec;
+        }
+
+        .decisions li {
+            counter-increment: dec;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 15px;
+        }
+
+        .decisions li:last-child {
+            border-bottom: none;
+        }
+
+        .decisions li::before {
+            content: counter(dec);
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--navy);
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .decisions li strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .decisions li span {
+            color: var(--gray-400);
+            font-size: 13px;
+        }
+
+        /* ═══ FUNNEL ═══ */
+        .funnel-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 32px 0;
+            flex-wrap: wrap;
+        }
+
+        .funnel-step {
+            background: var(--navy-light);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 14px 18px;
+            text-align: center;
+            min-width: 90px;
+        }
+
+        .funnel-step .f-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            margin-bottom: 4px;
+        }
+
+        .funnel-step .f-value {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .funnel-step .f-pct {
+            font-size: 11px;
+            color: var(--gold);
+            margin-top: 2px;
+        }
+
+        .funnel-arrow {
+            font-size: 18px;
+            color: var(--gold);
+            opacity: 0.5;
+        }
+
+        /* ═══ MISC ═══ */
+        .note {
+            background: rgba(200, 162, 78, 0.06);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            font-size: 13px;
+            color: var(--gray-400);
+            margin-top: 24px;
+        }
+
+        .note strong {
+            color: var(--gold);
+        }
+
+        .note.danger {
+            border-left-color: var(--red);
+            background: rgba(231, 76, 60, 0.06);
+        }
+
+        .note.danger strong {
+            color: var(--red);
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .tag.gold {
+            background: rgba(200, 162, 78, 0.15);
+            color: var(--gold);
+        }
+
+        .tag.red {
+            background: rgba(231, 76, 60, 0.15);
+            color: var(--red);
+        }
+
+        .tag.green {
+            background: rgba(39, 174, 96, 0.15);
+            color: var(--green);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 40px;
+            border-top: 1px solid rgba(200, 162, 78, 0.1);
+        }
+
+        .footer .brand {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .footer p {
+            font-size: 13px;
+            color: var(--gray-400);
+        }
+
+        @media (max-width:768px) {
+            .section {
+                padding: 48px 20px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .arrow-col {
+                transform: rotate(90deg);
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .action-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .funnel-flow {
+                flex-direction: column;
+            }
+
+            .funnel-arrow {
+                transform: rotate(90deg);
+            }
+
+            .camp-metrics {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+        <div class="hero-label">Sales Velocity × CréditoTop</div>
+        <h1>Plan Estratégico <span>Q2</span></h1>
+        <p>Optimización de campañas, nuevos ángulos y escala de resultados.</p>
+        <div class="hero-meta">
+            <span>Marzo 2026</span>
+            <span>·</span>
+            <span>Presentación para Walter Pagano</span>
+        </div>
+    </section>
+
+    <!-- ═══════════ 01 — PANORAMA ACTUAL ═══════════ -->
+    <section class="section">
+        <div class="section-tag">01 — Diagnóstico</div>
+        <h2>Dónde estamos <span>hoy</span></h2>
+        <p class="section-subtitle">Números reales de Q1 2026 (Tracker diario + Meta Ads). Toda la data viene del
+            tracker de Nadia y los exports de Meta.</p>
+
+        <!-- Big KPIs -->
+        <div class="metrics-grid">
+            <div class="metric-card danger">
+                <div class="metric-label">Invertido Q1</div>
+                <div class="metric-value red">$2,476</div>
+                <div class="metric-detail">3 meses de inversión en Meta</div>
+            </div>
+            <div class="metric-card danger">
+                <div class="metric-label">Facturado Q1</div>
+                <div class="metric-value red">$0</div>
+                <div class="metric-detail">6 cierres registrados, 0 cobros</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Leads totales</div>
+                <div class="metric-value">382</div>
+                <div class="metric-detail">Ene 230 · Feb 137 · Mar 15</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Anuncios activos</div>
+                <div class="metric-value gold">1</div>
+                <div class="metric-detail">"Si eres dueño de negocio"</div>
+            </div>
+        </div>
+
+        <!-- Month by month -->
+        <h3 style="font-size:14px; font-weight:600; margin: 24px 0 16px; color:var(--gray-400);">Comparación mensual
+            (tracker):</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Métrica</th>
+                    <th>Enero</th>
+                    <th>Febrero</th>
+                    <th>Marzo (4d)</th>
+                    <th>Tendencia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Inversión</td>
+                    <td>$1,292</td>
+                    <td>$1,020</td>
+                    <td>$164</td>
+                    <td class="muted">~$35-42/día</td>
+                </tr>
+                <tr>
+                    <td>Impresiones</td>
+                    <td>26,273</td>
+                    <td>24,739</td>
+                    <td>3,449</td>
+                    <td class="muted">Estable</td>
+                </tr>
+                <tr>
+                    <td>CPM</td>
+                    <td>$49.17</td>
+                    <td>$41.22</td>
+                    <td>$47.56</td>
+                    <td class="highlight-cell">Mejoró en Feb</td>
+                </tr>
+                <tr>
+                    <td>CTR</td>
+                    <td>1.72%</td>
+                    <td>1.67%</td>
+                    <td>1.83%</td>
+                    <td class="muted">Estable</td>
+                </tr>
+                <tr>
+                    <td>CPC</td>
+                    <td>$2.85</td>
+                    <td>$2.48</td>
+                    <td>$2.60</td>
+                    <td class="highlight-cell">Mejoró en Feb</td>
+                </tr>
+                <tr>
+                    <td>Visitas funnel</td>
+                    <td>331</td>
+                    <td>365</td>
+                    <td>58</td>
+                    <td class="muted">Estable</td>
+                </tr>
+                <tr>
+                    <td>Leads</td>
+                    <td class="highlight-cell">230</td>
+                    <td>137</td>
+                    <td class="danger-cell">15</td>
+                    <td class="danger-cell">↓ −40% m/m</td>
+                </tr>
+                <tr>
+                    <td>LP% (visita→lead)</td>
+                    <td class="highlight-cell">69.5%</td>
+                    <td>37.5%</td>
+                    <td class="danger-cell">25.9%</td>
+                    <td class="danger-cell">↓ Desplome</td>
+                </tr>
+                <tr>
+                    <td>CPL</td>
+                    <td class="highlight-cell">$5.62</td>
+                    <td>$7.44</td>
+                    <td class="danger-cell">$10.94</td>
+                    <td class="danger-cell">↑ +95%</td>
+                </tr>
+                <tr>
+                    <td>Agendas totales</td>
+                    <td class="highlight-cell">74</td>
+                    <td>26</td>
+                    <td>6</td>
+                    <td class="danger-cell">↓ −65%</td>
+                </tr>
+                <tr>
+                    <td>Agendas cualificadas</td>
+                    <td>63</td>
+                    <td>26</td>
+                    <td>6</td>
+                    <td class="danger-cell">↓</td>
+                </tr>
+                <tr>
+                    <td>CPL cualificado</td>
+                    <td>$20.51</td>
+                    <td>$39.22</td>
+                    <td>$27.34</td>
+                    <td class="danger-cell">↑ Subió</td>
+                </tr>
+                <tr>
+                    <td>Llamadas</td>
+                    <td>63</td>
+                    <td>30</td>
+                    <td>0</td>
+                    <td class="danger-cell">↓ −52%</td>
+                </tr>
+                <tr>
+                    <td>Asistencias</td>
+                    <td>47</td>
+                    <td>23</td>
+                    <td>0</td>
+                    <td class="danger-cell">↓ −51%</td>
+                </tr>
+                <tr>
+                    <td>% Asistencia</td>
+                    <td>74.6%</td>
+                    <td class="highlight-cell">76.7%</td>
+                    <td>—</td>
+                    <td class="highlight-cell">Estable ✓</td>
+                </tr>
+                <tr>
+                    <td>Cierres</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td class="muted">Estable bajo</td>
+                </tr>
+                <tr>
+                    <td>% Cierre (sobre asist.)</td>
+                    <td>6.4%</td>
+                    <td class="highlight-cell">13.0%</td>
+                    <td>—</td>
+                    <td class="muted">Mejoró %</td>
+                </tr>
+                <tr class="total-row">
+                    <td>Revenue facturado</td>
+                    <td>$0</td>
+                    <td>$0</td>
+                    <td>$0</td>
+                    <td>$0 total Q1</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Week by week -->
+        <h3 style="font-size:14px; font-weight:600; margin: 32px 0 16px; color:var(--gray-400);">Tendencia semana a
+            semana (donde se ve la caída):</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Semana</th>
+                    <th>Inversión</th>
+                    <th>Leads</th>
+                    <th>CPL</th>
+                    <th>Agendas</th>
+                    <th>Asistencias</th>
+                    <th>Cierres</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="muted">Ene Sem 1 (1-5)</td>
+                    <td>$178</td>
+                    <td>10</td>
+                    <td>$17.80</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td><strong style="color:var(--green)">Ene Sem 2 (6-12) ★</strong></td>
+                    <td>$482</td>
+                    <td class="highlight-cell">106</td>
+                    <td class="highlight-cell">$4.50</td>
+                    <td class="highlight-cell">20</td>
+                    <td>10</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td class="muted">Ene Sem 3 (13-19)</td>
+                    <td>$228</td>
+                    <td>42</td>
+                    <td>$5.40</td>
+                    <td>22</td>
+                    <td>13</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td class="muted">Ene Sem 4 (20-26)</td>
+                    <td>$234</td>
+                    <td>52</td>
+                    <td>$4.50</td>
+                    <td>18</td>
+                    <td>16</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td class="muted">Ene Sem 5 (27-31)</td>
+                    <td>$170</td>
+                    <td>20</td>
+                    <td>$8.50</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="padding:4px; border-bottom:2px solid rgba(200,162,78,0.2);"></td>
+                </tr>
+                <tr>
+                    <td class="muted">Feb Sem 1 (3-9)</td>
+                    <td>$326</td>
+                    <td>42</td>
+                    <td>$7.80</td>
+                    <td>12</td>
+                    <td>11</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td class="muted">Feb Sem 2 (10-16)</td>
+                    <td>$321</td>
+                    <td>43</td>
+                    <td>$7.50</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td class="muted">Feb Sem 3 (17-23)</td>
+                    <td>$217</td>
+                    <td>31</td>
+                    <td>$7.00</td>
+                    <td>4</td>
+                    <td>6</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td><strong style="color:var(--red)">Feb Sem 4 (24-28) ⚠️</strong></td>
+                    <td>$157</td>
+                    <td class="danger-cell">21</td>
+                    <td>$7.50</td>
+                    <td class="danger-cell">3</td>
+                    <td class="danger-cell">0</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note danger">
+            <strong>🚩 El cuello de botella:</strong> De Ene Sem 2 (106 leads, $4.50 CPL) a Feb Sem 4 (21 leads, $7.50
+            CPL) = <strong>caída del 80% en volumen de leads.</strong> El CTR y CPC se mantuvieron → el problema es la
+            conversión en la landing (LP%) o la calidad del tráfico, no el anuncio en sí. Además, 6 cierres sin cobros =
+            fuga de revenue.
+        </div>
+    </section>
+
+    <!-- ═══════════ 01B — CAMPAÑAS META ADS ═══════════ -->
+    <section class="section full-bleed">
+        <div class="section-inner">
+            <div class="section-tag">01B — Campañas Meta Ads</div>
+            <h2>Estado de las <span>campañas</span></h2>
+            <p class="section-subtitle">Export directo de Meta Ads (3 Feb – 4 Mar 2026). Solo 1 anuncio activo generando
+                resultados.</p>
+
+            <div class="campaign-box active">
+                <h4>
+                    "SI ERES DUEÑO DE NEGOCIO"
+                    <span class="camp-status active">Activa</span>
+                </h4>
+                <p class="camp-desc">Anuncio de video — Hook de oportunidad/capital. Único anuncio activo desde el 3 de
+                    febrero. Optimizado para registros (Pixel: complete_registration).</p>
+                <div class="camp-metrics">
+                    <div class="camp-metric">
+                        <div class="cm-val" style="color:var(--gold);">$647.91</div>
+                        <div class="cm-label">Gastado</div>
+                    </div>
+                    <div class="camp-metric">
+                        <div class="cm-val">94</div>
+                        <div class="cm-label">Registros</div>
+                    </div>
+                    <div class="camp-metric">
+                        <div class="cm-val" style="color:var(--green);">$6.89</div>
+                        <div class="cm-label">CPR</div>
+                    </div>
+                    <div class="camp-metric">
+                        <div class="cm-val">19,058</div>
+                        <div class="cm-label">Impresiones</div>
+                    </div>
+                    <div class="camp-metric">
+                        <div class="cm-val">10,562</div>
+                        <div class="cm-label">Alcance</div>
+                    </div>
+                    <div class="camp-metric">
+                        <div class="cm-val">$34.00</div>
+                        <div class="cm-label">CPM</div>
+                    </div>
+                    <div class="camp-metric">
+                        <div class="cm-val">1.80</div>
+                        <div class="cm-label">Frecuencia</div>
+                    </div>
+                    <div class="camp-metric">
+                        <div class="cm-val" style="color:var(--green);">1</div>
+                        <div class="cm-label">Compra</div>
+                    </div>
+                </div>
+                <div class="note" style="margin-top:16px;">
+                    <strong>Clasificaciones Meta:</strong> Calidad: Promedio · Interacción: Promedio ·
+                    <strong>Conversiones: Por encima del promedio ✓</strong><br>
+                    ROAS reportado por Meta: 7.72 · Atribución: 7 días clic + 1 día view.
+                </div>
+            </div>
+
+            <div class="campaign-box pending">
+                <h4>
+                    "ANA DE ORBEGOSO" <span style="font-weight:400; font-size:13px; color:var(--gray-400);">(retargeting
+                        — testimonio)</span>
+                    <span class="camp-status pending">Pendiente</span>
+                </h4>
+                <p class="camp-desc">Ad set de retargeting con caso de éxito de Ana de Orbegoso. Creado el 4 de Marzo.
+                    Presupuesto: $10/día. Aún sin impresiones ni gasto.</p>
+                <div class="camp-metrics">
+                    <div class="camp-metric">
+                        <div class="cm-val" style="color:var(--orange);">$0</div>
+                        <div class="cm-label">Gastado</div>
+                    </div>
+                    <div class="camp-metric">
+                        <div class="cm-val" style="color:var(--orange);">0</div>
+                        <div class="cm-label">Impresiones</div>
+                    </div>
+                    <div class="camp-metric">
+                        <div class="cm-val" style="color:var(--orange);">$10/día</div>
+                        <div class="cm-label">Presupuesto</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>Estructura actual de públicos (revisado con Esteban):</strong> Públicos personalizados del pixel
+                (~1,000 visitantes: purchase + registro + agendar + checkout) + Lookalike del pixel + Intereses apilados
+                con capas (negocios + inversiones + ingresos del hogar + códigos postales 25-50%). Decisión:
+                <strong>apagar lookalike actual, redirigir inversión a testeo de ángulos nuevos.</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ 02 — OBJETIVOS ═══════════ -->
+    <section class="section">
+        <div class="section-tag">02 — Objetivos</div>
+        <h2>Hacia dónde <span>vamos</span></h2>
+        <p class="section-subtitle">KPIs objetivo para cierre de Marzo y Abril. Basados en los mejores números que ya
+            logramos en Enero.</p>
+
+        <div class="comparison">
+            <div class="comparison-col">
+                <h3><span class="dot red"></span> Hoy (Feb 2026)</h3>
+                <div class="comp-row"><span class="label">Inversión/mes</span><span class="val">~$1,020</span></div>
+                <div class="comp-row"><span class="label">Leads/mes</span><span class="val">137</span></div>
+                <div class="comp-row"><span class="label">CPL</span><span class="val">$7.44</span></div>
+                <div class="comp-row"><span class="label">LP%</span><span class="val red">37.5%</span></div>
+                <div class="comp-row"><span class="label">Agendas/mes</span><span class="val">26</span></div>
+                <div class="comp-row"><span class="label">Asistencias</span><span class="val">23</span></div>
+                <div class="comp-row"><span class="label">Cierres → Cobros</span><span class="val red">3 → 0</span>
+                </div>
+                <div class="comp-row"><span class="label">Revenue</span><span class="val red">$0</span></div>
+                <div class="comp-row"><span class="label">Anuncios activos</span><span class="val">1</span></div>
+                <div class="comp-row"><span class="label">Retargeting</span><span class="val red">No</span></div>
+            </div>
+            <div class="arrow-col">→</div>
+            <div class="comparison-col target">
+                <h3><span class="dot green"></span> Meta (Abril 2026)</h3>
+                <div class="comp-row"><span class="label">Inversión/mes</span><span class="val gold">$1,200-1,500</span>
+                </div>
+                <div class="comp-row"><span class="label">Leads/mes</span><span class="val green">200+</span></div>
+                <div class="comp-row"><span class="label">CPL</span><span class="val green">
+                        < $6</span>
+                </div>
+                <div class="comp-row"><span class="label">LP%</span><span class="val green">50%+</span></div>
+                <div class="comp-row"><span class="label">Agendas/mes</span><span class="val green">50+</span></div>
+                <div class="comp-row"><span class="label">Asistencias</span><span class="val green">38+</span></div>
+                <div class="comp-row"><span class="label">Cierres → Cobros</span><span class="val green">8+ → 6+</span>
+                </div>
+                <div class="comp-row"><span class="label">Revenue</span><span class="val gold">$18K–30K</span></div>
+                <div class="comp-row"><span class="label">Anuncios activos</span><span class="val green">4-6</span>
+                </div>
+                <div class="comp-row"><span class="label">Retargeting</span><span class="val green">5 ángulos</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>💰 Proyección conservadora:</strong> 50 agendas × 75% asistencia = 38 citas. Con 20% cierre = 7-8
+            cierres × $3,500 ticket promedio = <strong>$24K-$28K/mes revenue.</strong> Comisión SV 10% =
+            $2,400-$2,800/mes. Ya logramos 74 agendas en Enero → es alcanzable con más ángulos y retargeting.
+        </div>
+    </section>
+
+    <!-- ═══════════ 03 — FASES ═══════════ -->
+    <section class="section full-bleed">
+        <div class="section-inner">
+            <div class="section-tag">03 — Plan de acción</div>
+            <h2>Las 3 <span>fases</span></h2>
+            <p class="section-subtitle">Plan definido con Esteban. Ejecución secuencial: primero testear, después
+                escalar.</p>
+
+            <!-- FASE 1 -->
+            <div class="phase p1">
+                <div class="phase-header">
+                    <div>
+                        <div class="phase-number">Fase 1 — Semana 1 y 2</div>
+                        <h3>Optimización de Ads + Testeo de Ángulos</h3>
+                    </div>
+                    <div class="phase-timeline">📅 Mar 6 – Mar 20</div>
+                </div>
+
+                <div class="action-grid">
+                    <div class="action-card">
+                        <h4>🎯 Tráfico Frío — 4 ángulos a testear</h4>
+                        <ul>
+                            <li><strong>Ángulo 1 (actual):</strong> Oportunidad — "Si eres dueño de negocio, estás
+                                dejando $200K sobre la mesa" → Mantener, ya funciona a $6.89 CPR</li>
+                            <li><strong>Ángulo 2:</strong> Educativo — "Las 3 cosas que los bancos no te dicen sobre el
+                                crédito comercial"</li>
+                            <li><strong>Ángulo 3:</strong> Social proof / Caso de éxito — Testimonio directo con hook
+                                áspero: "¿Cómo consiguió $100K al 0%?"</li>
+                            <li><strong>Ángulo 4:</strong> Dolor / Miedo — "Estás pagando intereses que NO deberías. Así
+                                es como otros latinos acceden a capital al 0%"</li>
+                        </ul>
+                    </div>
+                    <div class="action-card">
+                        <h4>🔁 Retargeting — 5 ángulos agresivos</h4>
+                        <ul>
+                            <li><strong>RT 1:</strong> Testimonio de Ana de Orbegoso (ya creado, hook más directo:
+                                "¿Cuánto logró? ¡Pum!")</li>
+                            <li><strong>RT 2:</strong> Urgencia / Escasez — "Solo acompaño X personas al mes"</li>
+                            <li><strong>RT 3:</strong> Rompe-objeciones — "No necesitas score perfecto, ni facturación"
+                            </li>
+                            <li><strong>RT 4:</strong> "Ya me conoces" — "Ya me has visto, ya sabes lo que hago. ¿A qué
+                                esperas?"</li>
+                            <li><strong>RT 5:</strong> Carrusel con múltiples resultados de clientes</li>
+                        </ul>
+                    </div>
+                    <div class="action-card">
+                        <h4>⚙️ Configuración técnica</h4>
+                        <ul>
+                            <li><strong>Apagar</strong> campaña de lookalike (sin resultados claros)</li>
+                            <li><strong>Frío:</strong> $30/día por ad set × 4 ángulos</li>
+                            <li><strong>Retargeting:</strong> $10-15/día total</li>
+                            <li><strong>Presupuesto total:</strong> ~$45-50/día ($1,350-1,500/mes)</li>
+                            <li><strong>KPI de decisión:</strong> CPL calificado + tasa de asistencia</li>
+                            <li><strong>Regla:</strong> Si CPL > $10 y no mejora en 3 días → apagar ese ángulo</li>
+                        </ul>
+                    </div>
+                    <div class="action-card">
+                        <h4>📱 Landing / Funnel (investigar LP%)</h4>
+                        <ul>
+                            <li>¿Qué cambió entre Ene (69.5%) y Feb (37.5%)?</li>
+                            <li>Opción A: Implementar pre-registro antes del VSL</li>
+                            <li>Opción B: Agregar social proof visible en landing</li>
+                            <li>Opción C: Timer de urgencia / plazas limitadas</li>
+                            <li>Meta: recuperar LP% a 50%+ mínimo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="note" style="margin-top:20px;">
+                    <strong>📊 Lógica (de la llamada con Esteban):</strong> Meta va a gastar sí o sí. Si el anuncio no
+                    convierte, es quemar dinero. Primero encontrar ángulos ganadores (1-2 semanas), y DESPUÉS escalar.
+                    Ángulo ganador = CPL calificado consistente y bajo.
+                </div>
+            </div>
+
+            <!-- FASE 2 -->
+            <div class="phase p2">
+                <div class="phase-header">
+                    <div>
+                        <div class="phase-number">Fase 2 — Semana 3 y 4</div>
+                        <h3>Contenido + YouTube + Escala</h3>
+                    </div>
+                    <div class="phase-timeline">📅 Mar 20 – Abr 3</div>
+                </div>
+
+                <div class="action-grid">
+                    <div class="action-card">
+                        <h4>📹 YouTube — "Levantadores de mano"</h4>
+                        <ul>
+                            <li>1 video/semana mínimo</li>
+                            <li>Formato: resolver 1 problema puntual</li>
+                            <li>Estructura: "Aplica estas 3 cosas para subir tu crédito"</li>
+                            <li>Objetivo: presuavizar venta, generar "yo quiero"</li>
+                            <li>Mínima edición, teleprompter, directo</li>
+                            <li>CTA: "Comenta CLASE" o link a registro VSL</li>
+                        </ul>
+                    </div>
+                    <div class="action-card">
+                        <h4>📈 Escala de Ads (con ángulo ganador)</h4>
+                        <ul>
+                            <li>Identificar ganador por CPL calificado + asistencia</li>
+                            <li><strong>Escala vertical:</strong> Subir presupuesto al mismo ad set</li>
+                            <li><strong>Escala horizontal:</strong> Duplicar ad set con otro público</li>
+                            <li>Apagar ángulos perdedores, reinvertir en ganadores</li>
+                            <li>Agregar nuevos ángulos de testeo (ciclo continuo)</li>
+                        </ul>
+                    </div>
+                    <div class="action-card">
+                        <h4>📲 Reels + Orgánico — Mantener</h4>
+                        <ul>
+                            <li>4-5 reels/semana con hooks virales</li>
+                            <li>Noticias virales diarias (N8N → teleprompter)</li>
+                            <li>Historias con engagement: encuestas, preguntas</li>
+                            <li>Todo orgánico → redirige al funnel</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FASE 3 -->
+            <div class="phase p3">
+                <div class="phase-header">
+                    <div>
+                        <div class="phase-number">Fase 3 — Mes 2 en adelante</div>
+                        <h3>Escala completa + Proceso de ventas</h3>
+                    </div>
+                    <div class="phase-timeline">📅 Abril+</div>
+                </div>
+
+                <div class="action-grid">
+                    <div class="action-card">
+                        <h4>🔄 Proceso de venta post-cita</h4>
+                        <ul>
+                            <li>Automatizar follow-up post-cita (GHL)</li>
+                            <li>Secuencia de nurturing para no-shows</li>
+                            <li>Secuencia de objeciones post-cita (email+WhatsApp)</li>
+                            <li>Cerrar la brecha cierre → cobro</li>
+                        </ul>
+                    </div>
+                    <div class="action-card">
+                        <h4>📈 Crecimiento a escala</h4>
+                        <ul>
+                            <li>Lookalike refinado con data nueva (+382 leads)</li>
+                            <li>Presupuesto $60-80/día si ROAS positivo</li>
+                            <li>YouTube semanal como flujo orgánico continuo</li>
+                            <li>Evaluar closer a comisión si volumen lo justifica</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ 04 — PUNTOS A DEFINIR ═══════════ -->
+    <section class="section">
+        <div class="section-tag">04 — Para la reunión</div>
+        <h2>Puntos a <span>definir</span> con Walter</h2>
+        <p class="section-subtitle">Decisiones que necesitamos tomar en esta llamada para ejecutar la Fase 1 esta
+            semana.</p>
+
+        <ol class="decisions">
+            <li>
+                <div>
+                    <strong>Los 6 cierres de Q1: ¿Qué pasó con los cobros?</strong>
+                    <span>El tracker muestra 3 cierres en Enero y 3 en Febrero, pero $0 facturado. ¿Son pagos
+                        pendientes, cancelaciones, o error de tracking? Esto cambia completamente el análisis.</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <strong>¿Qué cambió en la landing entre Enero y Febrero?</strong>
+                    <span>LP% cayó de 69.5% a 37.5% (−46%). ¿Se modificó el VSL, el formulario, el copy, o la
+                        estructura? Los clicks y CPC se mantuvieron iguales → el problema es post-click.</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <strong>Acceso completo a la cuenta publicitaria</strong>
+                    <span>Esteban tiene acceso al Business Manager pero no a la cuenta publicitaria directamente.
+                        Necesitamos control total para crear, pausar y optimizar campañas.</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <strong>Material de casos de éxito disponible</strong>
+                    <span>¿Cuántos testimonios grabados hay además de Ana de Orbegoso? ¿Raquel Pierre? ¿Otros? Los
+                        necesitamos para los ángulos de retargeting y frío.</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <strong>Presupuesto: ¿aprobamos $45-50/día?</strong>
+                    <span>Propuesta: $30/día frío (actual) + $10-15/día retargeting = ~$1,350-1,500/mes. Inversión
+                        incremental mínima ($300-500 más) para activar retargeting que nunca se ha hecho.</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <strong>YouTube: ¿listo para 1 video/semana?</strong>
+                    <span>Confirmar disponibilidad de Walter, equipo de edición (¿Esteban?), y equipo (teleprompter,
+                        cámara). Nosotros le mandamos la estructura del guión.</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <strong>Proceso post-cita: ¿cuánto seguimiento se hace hoy?</strong>
+                    <span>¿Cuántas veces se contacta al lead después de la cita? ¿Existe secuencia automatizada? ¿Nadia
+                        hace follow-up manual? Puede ser la diferencia entre cierre y cobro.</span>
+                </div>
+            </li>
+        </ol>
+    </section>
+
+    <!-- ═══════════ 05 — TIMELINE ═══════════ -->
+    <section class="section full-bleed">
+        <div class="section-inner">
+            <div class="section-tag">05 — Timeline</div>
+            <h2>Próximos <span>pasos</span></h2>
+            <p class="section-subtitle">Calendario de ejecución inmediata post-reunión.</p>
+
+            <div class="metrics-grid" style="grid-template-columns:repeat(4,1fr);">
+                <div class="metric-card highlight">
+                    <div class="metric-label">Esta semana</div>
+                    <div class="metric-value gold" style="font-size:18px;">Semana 1</div>
+                    <div class="metric-detail" style="text-align:left; margin-top:12px;">
+                        → Acceso cuenta publicitaria<br>
+                        → Recopilar testimonios<br>
+                        → Crear 3 creativos frío<br>
+                        → Activar RT Ana de Orbegoso<br>
+                        → Analizar LP% de la landing
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Mar 10-16</div>
+                    <div class="metric-value" style="font-size:18px;">Semana 2</div>
+                    <div class="metric-detail" style="text-align:left; margin-top:12px;">
+                        → 4 ángulos frío corriendo<br>
+                        → 2-3 ángulos RT activos<br>
+                        → Monitorear CPL por ángulo<br>
+                        → Primer video YouTube<br>
+                        → Ajustar landing si necesario
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Mar 17-23</div>
+                    <div class="metric-value" style="font-size:18px;">Semana 3</div>
+                    <div class="metric-detail" style="text-align:left; margin-top:12px;">
+                        → Identificar ángulo ganador<br>
+                        → Escalar ganador (+budget)<br>
+                        → Apagar perdedores<br>
+                        → Segundo video YouTube<br>
+                        → Review de métricas
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Mar 24-31</div>
+                    <div class="metric-value" style="font-size:18px;">Semana 4</div>
+                    <div class="metric-detail" style="text-align:left; margin-top:12px;">
+                        → Sistema de escala definido<br>
+                        → Funnel optimizado<br>
+                        → Objetivos Abril cerrados<br>
+                        → Review completo de Marzo<br>
+                        → Plan Abril con métricas
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <div class="footer">
+        <div class="brand">Sales Velocity × CréditoTop</div>
+        <p>Documento estratégico confidencial · Marzo 2026</p>
+    </div>
+
+</body>
+
+</html>
