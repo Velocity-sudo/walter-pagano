@@ -4,912 +4,756 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Marca — CréditoTop</title>
+    <title>CréditoTop — Estrategia Q2 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <style>
-        /* ── RESET ── */
-        *,
-        *::before,
-        *::after {
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #111E33;
+            --navy-light: #1A2A45;
+            --gold: #C8A24E;
+            --gold-light: #D4B06A;
+            --white: #FFFFFF;
+            --gray-100: #F4F5F7;
+            --gray-200: #E2E4E9;
+            --gray-400: #8B90A0;
+            --red: #E74C3C;
+            --green: #27AE60;
+            --blue: #3498DB;
+            --orange: #F39C12;
+        }
+
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* ── ROOT TOKENS ── */
-        :root {
-            --brand-navy: #002E5D;
-            --brand-navy-deep: #001A3A;
-            --brand-navy-mid: #0A3D6B;
-            --brand-white: #F8FAFB;
-            --brand-text: #C8D6E0;
-            --brand-gray-mid: #5A7A8F;
-            --brand-off-white: rgba(255, 255, 255, 0.04);
-
-            --brand-accent: #2ECC71;
-            --brand-accent-light: #54D98C;
-            --brand-accent-deep: #1FA85A;
-            --brand-accent-glow: rgba(46, 204, 113, 0.15);
-            --brand-accent-gradient: linear-gradient(135deg, #2ECC71, #1FA85A);
-
-            --brand-gold: #D4A853;
-            --brand-gold-light: #E8C97A;
-
-            --brand-font: 'Inter', -apple-system, sans-serif;
-            --brand-radius: 16px;
-            --brand-radius-lg: 24px;
-            --brand-max-content: 860px;
-            --brand-transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            --brand-shadow-card: 0 8px 32px rgba(0, 0, 0, 0.25);
-            --brand-shadow-glow: 0 0 40px var(--brand-accent-glow);
-        }
-
-        /* ── BASE ── */
         body {
-            font-family: var(--brand-font);
-            background: var(--brand-navy-deep);
-            color: var(--brand-white);
-            line-height: 1.7;
+            font-family: 'Inter', sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
         }
 
-        /* ── AMBIENT BACKGROUND ── */
-        body::before {
-            content: '';
-            position: fixed;
-            top: -50%;
-            right: -30%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, var(--brand-accent-glow) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            bottom: -40%;
-            left: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 46, 93, 0.3) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* ── NAV ── */
-        .brand-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            position: sticky;
-            top: 0;
-            background: rgba(0, 26, 58, 0.85);
-            z-index: 100;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-
-        .brand-nav .logo {
-            font-size: 1rem;
-            font-weight: 800;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--brand-white);
-        }
-
-        .brand-nav .logo span {
-            color: var(--brand-accent);
-        }
-
-        .brand-nav .version {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            opacity: 0.4;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 4px 12px;
-            border-radius: 40px;
-        }
-
-        /* ── HERO ── */
         .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 140px 5% 100px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 60px 40px;
+            background: radial-gradient(ellipse at 30% 20%, rgba(200, 162, 78, .08) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(200, 162, 78, .05) 0%, transparent 50%), var(--navy);
             position: relative;
-            z-index: 1;
         }
 
         .hero::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 60px;
-            background: linear-gradient(to bottom, transparent, var(--brand-accent));
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
 
-        .hero .eyebrow {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3em;
-            color: var(--brand-accent);
-            margin-bottom: 32px;
+        .hero-label {
+            font-size: 13px;
             font-weight: 600;
-        }
-
-        .hero .logo-mark {
-            display: inline-block;
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            background: var(--brand-accent-gradient);
-            margin-bottom: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 32px;
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: #fff;
-            box-shadow: var(--brand-shadow-glow);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+            opacity: .9;
         }
 
         .hero h1 {
-            font-size: clamp(2.2rem, 5.5vw, 4.5rem);
-            font-weight: 900;
-            letter-spacing: -0.04em;
-            line-height: 1.05;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--brand-white) 0%, var(--brand-text) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 16px;
         }
 
-        .hero .tagline {
-            font-size: 1.15rem;
-            font-weight: 300;
-            opacity: 0.55;
-            max-width: 500px;
-            margin: 0 auto;
-            letter-spacing: 0.01em;
+        .hero h1 span {
+            color: var(--gold);
         }
 
-        /* ── SECTIONS ── */
+        .hero p {
+            font-size: 18px;
+            color: var(--gray-400);
+            max-width: 550px;
+            margin-bottom: 40px;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 32px;
+            font-size: 13px;
+            color: var(--gray-400);
+        }
+
         .section {
-            padding: 100px 5%;
+            padding: 80px 40px;
             max-width: 1100px;
             margin: 0 auto;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            position: relative;
-            z-index: 1;
         }
 
-        .section-title {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--brand-accent);
-            margin-bottom: 48px;
+        .section.full-bleed {
+            max-width: 100%;
+            background: var(--navy-mid);
+            border-top: 1px solid rgba(200, 162, 78, .1);
+            border-bottom: 1px solid rgba(200, 162, 78, .1);
+        }
+
+        .section.full-bleed .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            font-size: 11px;
             font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .section-title::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(to right, rgba(46, 204, 113, 0.3), transparent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
         }
 
         .section h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -0.03em;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
         }
 
-        .section .subtitle {
-            font-size: 1rem;
-            opacity: 0.5;
-            max-width: 600px;
+        .section h2 span {
+            color: var(--gold);
+        }
+
+        .section-subtitle {
+            font-size: 15px;
+            color: var(--gray-400);
             margin-bottom: 40px;
-            font-weight: 300;
+            max-width: 700px;
         }
 
-        .section p {
-            font-size: 1rem;
-            line-height: 1.8;
-            opacity: 0.8;
-            max-width: 650px;
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
         }
 
-        /* ── IDENTITY TABLE ── */
-        .identity-table {
+        .metric-card {
+            background: var(--navy-light);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .metric-card.highlight {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, rgba(200, 162, 78, .08), rgba(200, 162, 78, .02));
+        }
+
+        .metric-card.danger {
+            border-color: var(--red);
+            background: linear-gradient(135deg, rgba(231, 76, 60, .08), rgba(231, 76, 60, .02));
+        }
+
+        .metric-card.success {
+            border-color: var(--green);
+            background: linear-gradient(135deg, rgba(39, 174, 96, .08), rgba(39, 174, 96, .02));
+        }
+
+        .metric-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .metric-value.gold {
+            color: var(--gold);
+        }
+
+        .metric-value.red {
+            color: var(--red);
+        }
+
+        .metric-value.green {
+            color: var(--green);
+        }
+
+        .metric-detail {
+            font-size: 12px;
+            color: var(--gray-400);
+        }
+
+        .data-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 48px;
+            margin: 24px 0;
+            font-size: 13px;
         }
 
-        .identity-table td {
-            padding: 16px 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.95rem;
-        }
-
-        .identity-table td:first-child {
+        .data-table th {
+            text-align: left;
+            font-size: 10px;
             font-weight: 700;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            font-size: 0.65rem;
-            letter-spacing: 0.12em;
-            opacity: 0.4;
-            width: 160px;
-            vertical-align: top;
+            color: var(--gray-400);
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
         }
 
-        /* ── PILLAR CARDS ── */
-        .pillars-grid {
+        .data-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, .04);
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table .total-row {
+            background: rgba(200, 162, 78, .06);
+            font-weight: 700;
+        }
+
+        .data-table .total-row td {
+            border-top: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .data-table .highlight-cell {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .data-table .danger-cell {
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        .data-table .muted {
+            color: var(--gray-400);
+        }
+
+        .comparison {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 24px;
+            align-items: center;
+            margin: 40px 0;
         }
 
-        .pillar-card {
-            background: rgba(255, 255, 255, 0.025);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: var(--brand-radius-lg);
-            padding: 44px 32px;
-            transition: var(--brand-transition);
+        .comparison-col {
+            background: var(--navy-light);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .comparison-col.target {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, rgba(200, 162, 78, .06), transparent);
+        }
+
+        .comparison-col h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot.red {
+            background: var(--red);
+        }
+
+        .dot.green {
+            background: var(--green);
+        }
+
+        .dot.gold {
+            background: var(--gold);
+        }
+
+        .comp-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .04);
+            font-size: 14px;
+        }
+
+        .comp-row:last-child {
+            border-bottom: none;
+        }
+
+        .comp-row .label {
+            color: var(--gray-400);
+        }
+
+        .comp-row .val {
+            font-weight: 700;
+        }
+
+        .comp-row .val.red {
+            color: var(--red);
+        }
+
+        .comp-row .val.green {
+            color: var(--green);
+        }
+
+        .comp-row .val.gold {
+            color: var(--gold);
+        }
+
+        .arrow-col {
+            font-size: 40px;
+            color: var(--gold);
+            text-align: center;
+        }
+
+        .phase {
+            background: var(--navy-light);
+            border-radius: 16px;
+            padding: 36px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, .06);
             position: relative;
             overflow: hidden;
         }
 
-        .pillar-card::before {
+        .phase::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--brand-accent-gradient);
-            opacity: 0;
-            transition: var(--brand-transition);
+            bottom: 0;
+            width: 4px;
+            border-radius: 4px 0 0 4px;
         }
 
-        .pillar-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(46, 204, 113, 0.3);
-            box-shadow: var(--brand-shadow-glow);
+        .phase.p1::before {
+            background: var(--red);
         }
 
-        .pillar-card:hover::before {
-            opacity: 1;
+        .phase.p2::before {
+            background: var(--gold);
         }
 
-        .pillar-card .number {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--brand-accent);
-            margin-bottom: 20px;
-            font-weight: 700;
+        .phase.p3::before {
+            background: var(--blue);
         }
 
-        .pillar-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 12px;
-            font-weight: 700;
+        .phase.p4::before {
+            background: var(--green);
         }
 
-        .pillar-card p {
-            font-size: 0.88rem;
-            opacity: 0.6;
-            line-height: 1.65;
-        }
-
-        /* ── STATS ROW ── */
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 36px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: var(--brand-radius);
-            background: rgba(255, 255, 255, 0.02);
-            transition: var(--brand-transition);
-        }
-
-        .stat-item:hover {
-            border-color: rgba(46, 204, 113, 0.2);
-            background: rgba(46, 204, 113, 0.04);
-        }
-
-        .stat-item .number {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--brand-accent);
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-        }
-
-        .stat-item .label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            opacity: 0.45;
-            font-weight: 500;
-        }
-
-        /* ── COLOR SWATCHES ── */
-        .color-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 16px;
-            margin-top: 32px;
-        }
-
-        .swatch {
-            border-radius: var(--brand-radius);
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: var(--brand-transition);
-        }
-
-        .swatch:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--brand-shadow-card);
-        }
-
-        .swatch-color {
-            height: 100px;
+        .phase-header {
             display: flex;
-            align-items: flex-end;
-            padding: 12px 16px;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .swatch-info {
-            padding: 16px;
-            background: rgba(255, 255, 255, 0.025);
-        }
-
-        .swatch-info .name {
+        .phase-number {
+            font-size: 11px;
             font-weight: 700;
-            font-size: 0.82rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 4px;
         }
 
-        .swatch-info .hex {
-            font-family: 'SF Mono', monospace;
-            font-size: 0.72rem;
-            opacity: 0.45;
+        .phase.p1 .phase-number {
+            color: var(--red);
         }
 
-        .swatch-info .use {
-            font-size: 0.72rem;
-            opacity: 0.5;
-            margin-top: 8px;
+        .phase.p2 .phase-number {
+            color: var(--gold);
         }
 
-        /* ── TYPOGRAPHY SHOWCASE ── */
-        .type-showcase {
-            margin-top: 40px;
+        .phase.p3 .phase-number {
+            color: var(--blue);
         }
 
-        .type-row {
-            display: flex;
-            align-items: baseline;
-            gap: 32px;
-            padding: 24px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        .phase.p4 .phase-number {
+            color: var(--green);
         }
 
-        .type-label {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            opacity: 0.35;
-            width: 130px;
-            flex-shrink: 0;
+        .phase h3 {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .phase-timeline {
+            background: rgba(255, 255, 255, .05);
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 12px;
             font-weight: 600;
+            color: var(--gray-400);
+            white-space: nowrap;
         }
 
-        .type-sample {
-            flex: 1;
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
         }
 
-        /* ── COMPONENT DEMOS ── */
-        .demo-block {
-            background: rgba(255, 255, 255, 0.015);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: var(--brand-radius-lg);
-            padding: 52px 40px;
-            margin-top: 24px;
+        .action-card {
+            background: rgba(255, 255, 255, .03);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, .04);
+        }
+
+        .action-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .action-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .action-card li {
+            font-size: 13px;
+            color: var(--gray-400);
+            padding: 4px 0 4px 16px;
+            position: relative;
+        }
+
+        .action-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 12px;
+        }
+
+        .action-card li strong {
+            color: var(--white);
+        }
+
+        .funnel-flow {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 20px;
+            justify-content: center;
+            gap: 8px;
+            margin: 32px 0;
+            flex-wrap: wrap;
         }
 
-        .demo-label {
-            font-size: 0.55rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            opacity: 0.35;
-            font-weight: 700;
-        }
-
-        /* ── BUTTONS ── */
-        .btn-cta {
-            display: inline-block;
-            padding: 18px 48px;
-            font-size: 0.8rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            border: none;
-            border-radius: 60px;
-            cursor: pointer;
-            transition: var(--brand-transition);
-            text-decoration: none;
-            background: var(--brand-accent-gradient);
-            color: #fff;
-            box-shadow: 0 4px 20px var(--brand-accent-glow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%);
-            transition: left 0.6s ease;
-        }
-
-        .btn-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 40px rgba(46, 204, 113, 0.35);
-        }
-
-        .btn-cta:hover::before {
-            left: 100%;
-        }
-
-        .btn-outline {
-            display: inline-block;
-            padding: 16px 40px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 60px;
-            cursor: pointer;
-            transition: var(--brand-transition);
-            text-decoration: none;
-            background: transparent;
-            color: var(--brand-white);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--brand-accent);
-            color: var(--brand-accent);
-            background: rgba(46, 204, 113, 0.06);
-        }
-
-        .btn-glass {
-            display: inline-block;
-            padding: 16px 40px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 60px;
-            cursor: pointer;
-            transition: var(--brand-transition);
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(10px);
-            color: var(--brand-white);
-        }
-
-        .btn-glass:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        /* ── EYEBROW BADGE ── */
-        .eyebrow-badge {
-            display: inline-block;
-            padding: 6px 18px;
-            font-size: 0.55rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            border-radius: 40px;
-            background: rgba(46, 204, 113, 0.1);
-            border: 1px solid rgba(46, 204, 113, 0.2);
-            color: var(--brand-accent);
-        }
-
-        /* ── TESTIMONIAL CARD ── */
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.025);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: var(--brand-radius-lg);
-            padding: 44px 36px;
-            max-width: 520px;
-            position: relative;
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 24px;
-            font-size: 4rem;
-            color: var(--brand-accent);
-            opacity: 0.15;
-            font-weight: 900;
-            line-height: 1;
-        }
-
-        .testimonial-card .quote {
-            font-size: 1rem;
-            font-style: italic;
-            line-height: 1.8;
-            opacity: 0.8;
-            margin-bottom: 24px;
-        }
-
-        .testimonial-card .author {
-            font-size: 0.75rem;
-            font-weight: 700;
-            opacity: 0.5;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        /* ── VOICE CARDS ── */
-        .voice-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 16px;
-            margin-top: 32px;
-        }
-
-        .voice-card {
-            background: rgba(255, 255, 255, 0.025);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: var(--brand-radius);
-            padding: 28px 20px;
+        .funnel-step {
+            background: var(--navy-light);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 10px;
+            padding: 14px 18px;
             text-align: center;
-            transition: var(--brand-transition);
+            min-width: 100px;
         }
 
-        .voice-card:hover {
-            border-color: rgba(46, 204, 113, 0.2);
-        }
-
-        .voice-card .attr {
-            font-size: 0.55rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: var(--brand-accent);
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-
-        .voice-card .val {
-            font-size: 1rem;
+        .funnel-step .f-label {
+            font-size: 10px;
             font-weight: 600;
-        }
-
-        /* ── DOS/DONTS TABLE ── */
-        .dos-donts-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 32px;
-        }
-
-        .dos-col,
-        .donts-col {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: var(--brand-radius);
-            padding: 32px 28px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .dos-col h4,
-        .donts-col h4 {
-            font-size: 0.65rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 20px;
+            color: var(--gray-400);
+            margin-bottom: 4px;
+        }
+
+        .funnel-step .f-value {
+            font-size: 18px;
             font-weight: 800;
         }
 
-        .dos-col h4 {
-            color: var(--brand-accent);
+        .funnel-step .f-pct {
+            font-size: 11px;
+            color: var(--gold);
+            margin-top: 2px;
         }
 
-        .donts-col h4 {
-            color: #e74c3c;
+        .funnel-arrow {
+            font-size: 18px;
+            color: var(--gold);
+            opacity: .5;
         }
 
-        .dos-col li,
-        .donts-col li {
+        .insight-box {
+            background: rgba(200, 162, 78, .06);
+            border: 1px solid rgba(200, 162, 78, .15);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .insight-box h4 {
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .insight-box p {
+            font-size: 14px;
+            color: var(--gray-200);
+            line-height: 1.6;
+        }
+
+        .insight-box.danger {
+            background: rgba(231, 76, 60, .06);
+            border-color: rgba(231, 76, 60, .2);
+        }
+
+        .insight-box.danger h4 {
+            color: var(--red);
+        }
+
+        .note {
+            background: rgba(200, 162, 78, .06);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            font-size: 13px;
+            color: var(--gray-400);
+            margin-top: 24px;
+        }
+
+        .note strong {
+            color: var(--gold);
+        }
+
+        .note.danger {
+            border-left-color: var(--red);
+            background: rgba(231, 76, 60, .06);
+        }
+
+        .note.danger strong {
+            color: var(--red);
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .tag.gold {
+            background: rgba(200, 162, 78, .15);
+            color: var(--gold);
+        }
+
+        .tag.red {
+            background: rgba(231, 76, 60, .15);
+            color: var(--red);
+        }
+
+        .tag.green {
+            background: rgba(39, 174, 96, .15);
+            color: var(--green);
+        }
+
+        .gap-visual {
+            display: grid;
+            grid-template-columns: 1fr 60px 1fr;
+            align-items: center;
+            gap: 0;
+            margin: 32px 0;
+        }
+
+        .gap-bar {
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .gap-bar.big {
+            background: linear-gradient(135deg, rgba(52, 152, 219, .15), rgba(52, 152, 219, .05));
+            border: 1px solid rgba(52, 152, 219, .3);
+        }
+
+        .gap-bar.small {
+            background: linear-gradient(135deg, rgba(231, 76, 60, .15), rgba(231, 76, 60, .05));
+            border: 1px solid rgba(231, 76, 60, .3);
+        }
+
+        .gap-bar .gb-value {
+            font-size: 36px;
+            font-weight: 800;
+        }
+
+        .gap-bar .gb-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-400);
+            margin-top: 4px;
+        }
+
+        .gap-arrow {
+            text-align: center;
+            font-size: 28px;
+            color: var(--red);
+        }
+
+        .pipeline-bar {
+            display: flex;
+            height: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 16px 0;
+        }
+
+        .pipeline-bar div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .5px;
+            color: var(--navy);
+            min-width: 30px;
+        }
+
+        .decisions {
             list-style: none;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            font-size: 0.88rem;
-            opacity: 0.75;
+            padding: 0;
+            counter-reset: dec;
         }
 
-        /* ── DONTS LIST ── */
-        .donts-list {
-            list-style: none;
-            margin-top: 28px;
-        }
-
-        .donts-list li {
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            font-size: 0.88rem;
+        .decisions li {
+            counter-increment: dec;
             display: flex;
             align-items: flex-start;
-            gap: 14px;
-            opacity: 0.8;
+            gap: 16px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
+            font-size: 15px;
         }
 
-        .donts-list .icon {
-            color: #e74c3c;
-            font-weight: 700;
+        .decisions li:last-child {
+            border-bottom: none;
+        }
+
+        .decisions li::before {
+            content: counter(dec);
             flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--navy);
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 14px;
         }
 
-        /* ── CODE BLOCK ── */
-        .code-block {
-            background: rgba(0, 0, 0, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: var(--brand-radius);
-            padding: 36px;
-            margin-top: 32px;
-            overflow-x: auto;
+        .decisions li strong {
+            display: block;
+            margin-bottom: 2px;
         }
 
-        .code-block pre {
-            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
-            font-size: 0.78rem;
-            line-height: 1.9;
-            color: rgba(255, 255, 255, 0.65);
+        .decisions li span {
+            color: var(--gray-400);
+            font-size: 13px;
         }
 
-        .code-block .comment {
-            color: var(--brand-accent);
-            opacity: 0.6;
-        }
-
-        /* ── FULL-BLEED WRAPPER ── */
-        .section-wrapper {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ── LIGHT SECTION (alternating) ── */
-        .section-wrapper.light {
-            background: var(--brand-white);
-        }
-
-        .section-wrapper.light .section {
-            border-bottom-color: rgba(0, 46, 93, 0.08);
-        }
-
-        .section-wrapper.light .section-title {
-            color: var(--brand-accent-deep);
-        }
-
-        .section-wrapper.light .section-title::after {
-            background: linear-gradient(to right, rgba(31, 168, 90, 0.35), transparent);
-        }
-
-        .section-wrapper.light h2 {
-            color: var(--brand-navy-deep);
-        }
-
-        .section-wrapper.light .subtitle,
-        .section-wrapper.light p {
-            color: var(--brand-gray-mid);
-            opacity: 1;
-        }
-
-        .section-wrapper.light .identity-table td {
-            color: var(--brand-navy-deep);
-            border-bottom-color: rgba(0, 46, 93, 0.08);
-        }
-
-        .section-wrapper.light .identity-table td:first-child {
-            color: var(--brand-gray-mid);
-        }
-
-        .section-wrapper.light .stat-item {
-            background: rgba(0, 46, 93, 0.04);
-            border-color: rgba(0, 46, 93, 0.1);
-        }
-
-        .section-wrapper.light .stat-item:hover {
-            border-color: rgba(46, 204, 113, 0.35);
-            background: rgba(46, 204, 113, 0.06);
-        }
-
-        .section-wrapper.light .stat-item .label {
-            color: var(--brand-gray-mid);
-            opacity: 1;
-        }
-
-        .section-wrapper.light .pillar-card {
-            background: rgba(0, 46, 93, 0.035);
-            border-color: rgba(0, 46, 93, 0.1);
-        }
-
-        .section-wrapper.light .pillar-card:hover {
-            border-color: rgba(46, 204, 113, 0.4);
-        }
-
-        .section-wrapper.light .pillar-card h3 {
-            color: var(--brand-navy-deep);
-        }
-
-        .section-wrapper.light .pillar-card p {
-            color: var(--brand-gray-mid);
-        }
-
-        .section-wrapper.light h3 {
-            color: var(--brand-navy-deep);
-        }
-
-        .section-wrapper.light .type-row {
-            border-bottom-color: rgba(0, 46, 93, 0.08);
-        }
-
-        .section-wrapper.light .type-label {
-            color: var(--brand-gray-mid);
-            opacity: 1;
-        }
-
-        .section-wrapper.light .type-sample {
-            color: var(--brand-navy-deep);
-        }
-
-        .section-wrapper.light .voice-card {
-            background: rgba(0, 46, 93, 0.04);
-            border-color: rgba(0, 46, 93, 0.1);
-        }
-
-        .section-wrapper.light .voice-card:hover {
-            border-color: rgba(46, 204, 113, 0.35);
-        }
-
-        .section-wrapper.light .voice-card .val {
-            color: var(--brand-navy-deep);
-        }
-
-        .section-wrapper.light .code-block {
-            background: var(--brand-navy-deep);
-            border-color: rgba(0, 46, 93, 0.15);
-        }
-
-        .section-wrapper.light .code-block pre {
-            color: rgba(255, 255, 255, 0.75);
-        }
-
-        .section-wrapper.light .swatch-info {
-            background: rgba(0, 46, 93, 0.04);
-        }
-
-        .section-wrapper.light .swatch-info .name {
-            color: var(--brand-navy-deep);
-        }
-
-        .section-wrapper.light .swatch-info .hex {
-            color: var(--brand-gray-mid);
-        }
-
-        .section-wrapper.light .swatch-info .use {
-            color: var(--brand-gray-mid);
-        }
-
-        .section-wrapper.light .swatch {
-            border-color: rgba(0, 46, 93, 0.1);
-        }
-
-        /* ── DARK SECTION (explicit, for clarity) ── */
-        .section-wrapper.dark {
-            background: var(--brand-navy-deep);
-        }
-
-        /* ── FOOTER ── */
-        .brand-footer {
+        .footer {
             text-align: center;
-            padding: 80px 5%;
-            opacity: 0.3;
-            font-size: 0.7rem;
-            letter-spacing: 0.12em;
-            font-weight: 500;
-            position: relative;
-            z-index: 1;
+            padding: 60px 40px;
+            border-top: 1px solid rgba(200, 162, 78, .1);
         }
 
-        /* ── RESPONSIVE ── */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 100px 5% 70px;
-            }
+        .footer .brand {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
 
+        .footer p {
+            font-size: 13px;
+            color: var(--gray-400);
+        }
+
+        @media (max-width:768px) {
             .section {
-                padding: 70px 5%;
+                padding: 48px 20px;
             }
 
-            .pillars-grid {
+            .comparison {
                 grid-template-columns: 1fr;
             }
 
-            .color-grid {
+            .arrow-col {
+                transform: rotate(90deg);
+            }
+
+            .metrics-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .type-row {
+            .action-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .funnel-flow {
                 flex-direction: column;
-                gap: 8px;
             }
 
-            .stats-row {
-                grid-template-columns: repeat(2, 1fr);
+            .funnel-arrow {
+                transform: rotate(90deg);
             }
 
-            .voice-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .dos-donts-grid {
+            .gap-visual {
                 grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .color-grid {
-                grid-template-columns: 1fr;
+                gap: 12px;
             }
 
-            .voice-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-row {
-                grid-template-columns: 1fr;
+            .gap-arrow {
+                transform: rotate(90deg);
             }
         }
     </style>
@@ -917,449 +761,631 @@
 
 <body>
 
-    <!-- ═══════════════ NAV ═══════════════ -->
-    <nav class="brand-nav">
-        <div class="logo">CRÉDITO<span>TOP</span></div>
-        <div class="version">Manual de Marca v1.0</div>
-    </nav>
-
-    <!-- ═══════════════ HERO ═══════════════ -->
+    <!-- ═══ HERO ═══ -->
     <section class="hero">
-        <div class="eyebrow">Brand Guidelines</div>
-        <div class="logo-mark">CT</div>
-        <h1>CréditoTop</h1>
-        <p class="tagline">Tu camino hacia el capital inteligente</p>
+        <div class="hero-label">Sales Velocity × CréditoTop</div>
+        <h1>Estrategia <span>Q2 2026</span></h1>
+        <p>Diagnóstico real con datos del pipeline, objetivos concretos, y el plan de acción priorizado por impacto
+            inmediato.</p>
+        <div class="hero-meta">
+            <span>6 de Marzo 2026</span>
+            <span>·</span>
+            <span>Presentación para Walter Pagano</span>
+        </div>
     </section>
 
-    <!-- ═══════════════ 01 · IDENTIDAD ═══════════════ -->
-    <div class="section-wrapper light">
-        <section class="section">
-            <div class="section-title">01 · Identidad de Marca</div>
-            <h2>¿Quién es CréditoTop?</h2>
-            <p class="subtitle">La autoridad en acceso a capital comercial al 0% para empresarios hispanos en Estados
-                Unidos.</p>
+    <!-- ═══════════ 01 — PANORAMA ACTUAL ═══════════ -->
+    <section class="section">
+        <div class="section-tag">01 — Panorama Actual</div>
+        <h2>Dónde estamos <span>hoy</span></h2>
+        <p class="section-subtitle">Datos reales del Pipeline GHL (2,028 leads + 60 clientes), Dashboard, Tracker de
+            Campañas y Meta Ads.</p>
 
-            <table class="identity-table">
-                <tr>
-                    <td>Marca</td>
-                    <td>CréditoTop — una marca de SyncServe LLC</td>
-                </tr>
-                <tr>
-                    <td>Fundador</td>
-                    <td>Walter Pagano</td>
-                </tr>
-                <tr>
-                    <td>Tagline</td>
-                    <td><em>"Tu camino hacia el capital inteligente"</em></td>
-                </tr>
-                <tr>
-                    <td>Industria</td>
-                    <td>Mentoría financiera & Capital comercial para hispanos en USA</td>
-                </tr>
-                <tr>
-                    <td>Personalidad</td>
-                    <td>Autoritario · Accesible · Directo · Educativo · Aspiracional</td>
-                </tr>
-                <tr>
-                    <td>Handle</td>
-                    <td>@finanzasconwalter</td>
-                </tr>
-                <tr>
-                    <td>Web</td>
-                    <td>creditotop.com</td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td>info@creditotop.com</td>
-                </tr>
-                <tr>
-                    <td>Ubicación</td>
-                    <td>Florida, Estados Unidos</td>
-                </tr>
-            </table>
-
-            <!-- Stats -->
-            <div class="stats-row">
-                <div class="stat-item">
-                    <div class="number">$15M+</div>
-                    <div class="label">Capital gestionado</div>
-                </div>
-                <div class="stat-item">
-                    <div class="number">70+</div>
-                    <div class="label">Emprendedores acompañados</div>
-                </div>
-                <div class="stat-item">
-                    <div class="number">10+</div>
-                    <div class="label">Bancos aliados</div>
-                </div>
-                <div class="stat-item">
-                    <div class="number">0%</div>
-                    <div class="label">Interés en capital</div>
-                </div>
+        <!-- Big Pipeline Numbers -->
+        <h3 style="font-size:14px; font-weight:600; margin:0 0 16px; color:var(--gray-400);">Pipeline GHL — Vista
+            general:</h3>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-label">Total Leads en Pipeline</div>
+                <div class="metric-value">2,028</div>
+                <div class="metric-detail">Acumulado histórico</div>
             </div>
-
-            <h3 style="font-size:1rem; margin:56px 0 20px; font-weight:700;">Pilares de Marca</h3>
-            <div class="pillars-grid">
-                <div class="pillar-card">
-                    <div class="number">Pilar 01</div>
-                    <h3>Autoridad Financiera</h3>
-                    <p>Conocimiento profundo del sistema bancario americano respaldado por +$15M en capital gestionado y
-                        relaciones directas con los principales bancos.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="number">Pilar 02</div>
-                    <h3>Acompañamiento Real</h3>
-                    <p>No vendemos cursos ni plantillas. Acompañamiento personalizado 1:1 donde Walter trabaja contigo
-                        mano a mano hasta la aprobación de tu capital.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="number">Pilar 03</div>
-                    <h3>Capital Estratégico al 0%</h3>
-                    <p>Un sistema probado de construcción + stacking que permite a latinos en USA acceder de $50K a
-                        +$200K sin intereses y sin importar su estatus.</p>
-                </div>
+            <div class="metric-card success">
+                <div class="metric-label">Clientes Activos</div>
+                <div class="metric-value green">51</div>
+                <div class="metric-detail">En acompañamiento hoy</div>
             </div>
-        </section>
-    </div>
-
-    <!-- ═══════════════ 02 · COLORES ═══════════════ -->
-    <div class="section-wrapper dark">
-        <section class="section">
-            <div class="section-title">02 · Paleta de Colores</div>
-            <h2>Color System</h2>
-            <p class="subtitle">Azul navy profundo como base de confianza y autoridad. Verde esmeralda como acento de
-                crecimiento, capital y oportunidad.</p>
-
-            <h3 style="font-size:0.8rem; margin-bottom:16px; opacity:0.5; font-weight:700;">Colores Base</h3>
-            <div class="color-grid">
-                <div class="swatch">
-                    <div class="swatch-color" style="background:#001A3A;"></div>
-                    <div class="swatch-info">
-                        <div class="name">Navy Deep</div>
-                        <div class="hex">#001A3A</div>
-                        <div class="use">Fondo principal, dark mode</div>
-                    </div>
-                </div>
-                <div class="swatch">
-                    <div class="swatch-color" style="background:#002E5D;"></div>
-                    <div class="swatch-info">
-                        <div class="name">Navy Core</div>
-                        <div class="hex">#002E5D</div>
-                        <div class="use">Headers, textos principales</div>
-                    </div>
-                </div>
-                <div class="swatch">
-                    <div class="swatch-color" style="background:#0A3D6B;"></div>
-                    <div class="swatch-info">
-                        <div class="name">Navy Mid</div>
-                        <div class="hex">#0A3D6B</div>
-                        <div class="use">Cards, secciones elevadas</div>
-                    </div>
-                </div>
-                <div class="swatch">
-                    <div class="swatch-color" style="background:#F8FAFB; border-bottom: 1px solid rgba(0,0,0,0.1);">
-                    </div>
-                    <div class="swatch-info">
-                        <div class="name">Ice White</div>
-                        <div class="hex">#F8FAFB</div>
-                        <div class="use">Texto sobre fondos oscuros</div>
-                    </div>
-                </div>
+            <div class="metric-card highlight">
+                <div class="metric-label">Valor en Pipeline</div>
+                <div class="metric-value gold">$245K</div>
+                <div class="metric-detail">Clientes activos $210K + closers $35K</div>
             </div>
-
-            <h3 style="font-size:0.8rem; margin:48px 0 16px; opacity:0.5; font-weight:700;">Color de Acento</h3>
-            <div class="color-grid">
-                <div class="swatch">
-                    <div class="swatch-color" style="background:#2ECC71;"></div>
-                    <div class="swatch-info">
-                        <div class="name">Esmeralda Capital</div>
-                        <div class="hex">#2ECC71</div>
-                        <div class="use">CTAs, destacados, icons</div>
-                    </div>
-                </div>
-                <div class="swatch">
-                    <div class="swatch-color" style="background:#54D98C;"></div>
-                    <div class="swatch-info">
-                        <div class="name">Esmeralda Light</div>
-                        <div class="hex">#54D98C</div>
-                        <div class="use">Badges, hover states</div>
-                    </div>
-                </div>
-                <div class="swatch">
-                    <div class="swatch-color" style="background:#1FA85A;"></div>
-                    <div class="swatch-info">
-                        <div class="name">Esmeralda Deep</div>
-                        <div class="hex">#1FA85A</div>
-                        <div class="use">Gradientes, hover CTAs</div>
-                    </div>
-                </div>
+            <div class="metric-card danger">
+                <div class="metric-label">Pendientes de Pago</div>
+                <div class="metric-value red">21</div>
+                <div class="metric-detail">35% de clientes sin cobrar</div>
             </div>
+        </div>
 
-            <p
-                style="margin-top:40px; font-size:0.85rem; opacity:0.55; border-left:3px solid var(--brand-accent); padding-left:16px;">
-                <strong>Regla:</strong> El verde esmeralda es un <em>acento</em>, no dominante. Máx 10–15% de presencia
-                visual. El navy transmite confianza y autoridad; el verde, crecimiento y oportunidad.
+        <!-- Pipeline Distribution visual -->
+        <h3 style="font-size:14px; font-weight:600; margin:24px 0 12px; color:var(--gray-400);">Distribución del
+            Pipeline de Leads:</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Etapa</th>
+                    <th>Cantidad</th>
+                    <th>% del Total</th>
+                    <th>Valor</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>REDES (solo engagement)</td>
+                    <td><strong>1,161</strong></td>
+                    <td>57.2%</td>
+                    <td class="muted">$4.2M nominal</td>
+                    <td class="danger-cell">⚠ Sin contacto real</td>
+                </tr>
+                <tr>
+                    <td>NO RESPONDE</td>
+                    <td>236</td>
+                    <td>11.6%</td>
+                    <td>$60K</td>
+                    <td class="danger-cell">Oportunidad perdida</td>
+                </tr>
+                <tr>
+                    <td>NO INTERESADOS</td>
+                    <td>200</td>
+                    <td>9.9%</td>
+                    <td>$245K</td>
+                    <td class="muted">Descartados</td>
+                </tr>
+                <tr>
+                    <td>MAL CRÉDITO</td>
+                    <td>114</td>
+                    <td>5.6%</td>
+                    <td>$255K</td>
+                    <td class="muted">No cualifican</td>
+                </tr>
+                <tr>
+                    <td>CALIENTE SETTER</td>
+                    <td>43</td>
+                    <td>2.1%</td>
+                    <td>$20K</td>
+                    <td class="highlight-cell">✓ En proceso</td>
+                </tr>
+                <tr>
+                    <td>CALIENTE CLOSER</td>
+                    <td>33</td>
+                    <td>1.6%</td>
+                    <td>$160K</td>
+                    <td class="highlight-cell">✓ Próximos a cerrar</td>
+                </tr>
+                <tr>
+                    <td>NO ASISTIÓ / CANCELADO</td>
+                    <td>117</td>
+                    <td>5.8%</td>
+                    <td>$380K</td>
+                    <td class="danger-cell">Re-activar</td>
+                </tr>
+                <tr>
+                    <td>NO COMPRÓ</td>
+                    <td>39</td>
+                    <td>1.9%</td>
+                    <td>$160K</td>
+                    <td class="muted">Follow-up pendiente</td>
+                </tr>
+                <tr class="total-row">
+                    <td>CLIENTES (pipeline separado)</td>
+                    <td>60</td>
+                    <td>—</td>
+                    <td>$245K</td>
+                    <td>51 activos, 4 finalizados</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- The big gap -->
+        <div class="insight-box danger">
+            <h4>🚨 Hallazgo #1: el 57% de los leads son fantasma</h4>
+            <p>De 2,028 leads en el pipeline, <strong>1,161 son solo contactos de redes sociales</strong> que nunca
+                dejaron datos ni registraron. Solo <strong>867 entraron al funnel real</strong>. De esos 867, apenas
+                <strong>33 llegaron a "Caliente Closer"</strong>. <br><br>
+                <strong>Tasa de conversión real:</strong> Lead-a-Cliente = <strong>3.0%</strong> (60 clientes de 2,028
+                leads totales).
+                Pero si solo contamos los que realmente entraron al funnel: <strong>6.9%</strong> (60 de 867).
             </p>
-        </section>
-    </div>
+        </div>
 
-    <!-- ═══════════════ 03 · TIPOGRAFÍA ═══════════════ -->
-    <div class="section-wrapper light">
-        <section class="section">
-            <div class="section-title">03 · Tipografía</div>
-            <h2>Inter</h2>
-            <p style="margin-bottom:40px;"><a href="https://fonts.google.com/specimen/Inter" target="_blank"
-                    style="color:var(--brand-accent); font-size:0.85rem; text-decoration:none;">Google Fonts →</a></p>
+        <div class="gap-visual">
+            <div class="gap-bar big">
+                <div class="gb-value" style="color:var(--blue);">1,161</div>
+                <div class="gb-label">Contactos de redes (sin datos)</div>
+            </div>
+            <div class="gap-arrow">→</div>
+            <div class="gap-bar small">
+                <div class="gb-value" style="color:var(--red);">60</div>
+                <div class="gb-label">Clientes reales</div>
+            </div>
+        </div>
 
-            <div class="type-showcase">
-                <div class="type-row">
-                    <span class="type-label">Hero · 900</span>
-                    <span class="type-sample"
-                        style="font-size:3.2rem; font-weight:900; letter-spacing:-0.04em;">CréditoTop</span>
+        <!-- Hallazgo #2: Cobro -->
+        <div class="insight-box danger">
+            <h4>🚨 Hallazgo #2: problema severo de cobro</h4>
+            <p>De 60 clientes en el pipeline: <strong>21 están "pendientes por pagar" (35%)</strong>. Solo 13 tienen
+                algún pago registrado. 8 trabajan bajo "cobro al final" (sin enganche). 4 aparecen como "sin pago
+                inicial".<br><br>
+                <strong>Hay ~$105K en servicios entregados sin cobrar.</strong> Este es dinero que ya se ganó y no se
+                está recogiendo.
+            </p>
+        </div>
+
+        <div class="metrics-grid" style="margin-top:24px;">
+            <div class="metric-card danger">
+                <div class="metric-label">Sin cobrar</div>
+                <div class="metric-value red">21</div>
+                <div class="metric-detail">Clientes pendientes de pago</div>
+            </div>
+            <div class="metric-card success">
+                <div class="metric-label">Con pagos</div>
+                <div class="metric-value green">13</div>
+                <div class="metric-detail">Pagos registrados</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Cobro al final</div>
+                <div class="metric-value">8</div>
+                <div class="metric-detail">Sin enganche (alto riesgo)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Sin pago inicial</div>
+                <div class="metric-value red">4</div>
+                <div class="metric-detail">Servicio entregado gratis</div>
+            </div>
+        </div>
+
+        <!-- Q4 vs Q1 comparison -->
+        <h3 style="font-size:14px; font-weight:600; margin:40px 0 16px; color:var(--gray-400);">Evolución trimestral:
+        </h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Métrica</th>
+                    <th>Q4 2025</th>
+                    <th>Q1 2026</th>
+                    <th>Cambio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Leads nuevos (pipeline)</td>
+                    <td>410</td>
+                    <td>1,215</td>
+                    <td class="highlight-cell">+196% ↑</td>
+                </tr>
+                <tr>
+                    <td>Clientes nuevos</td>
+                    <td>10</td>
+                    <td>13</td>
+                    <td class="highlight-cell">+30% ↑</td>
+                </tr>
+                <tr>
+                    <td>Conversión Lead→Cliente</td>
+                    <td>2.4%</td>
+                    <td>1.1%</td>
+                    <td class="danger-cell">-54% ↓</td>
+                </tr>
+                <tr>
+                    <td>Contactos GHL nuevos</td>
+                    <td>499</td>
+                    <td>1,430</td>
+                    <td class="highlight-cell">+186% ↑</td>
+                </tr>
+                <tr>
+                    <td>Facebook como fuente</td>
+                    <td>54</td>
+                    <td>606</td>
+                    <td class="highlight-cell">+1,022% ↑</td>
+                </tr>
+                <tr>
+                    <td>LP% (visita→registro)</td>
+                    <td class="highlight-cell">69.5%</td>
+                    <td class="danger-cell">25.9%</td>
+                    <td class="danger-cell">-63% ↓</td>
+                </tr>
+                <tr>
+                    <td>CPL (Ads)</td>
+                    <td>~$5.62</td>
+                    <td>$10.94</td>
+                    <td class="danger-cell">+95% ↑</td>
+                </tr>
+                <tr>
+                    <td>Total Calls</td>
+                    <td>11,960</td>
+                    <td>9,000</td>
+                    <td class="danger-cell">-25% ↓</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="insight-box">
+            <h4>💡 Lectura del panorama</h4>
+            <p><strong>Lo bueno:</strong> El tráfico orgánico explotó (+196% leads). Enero solo tuvo 970 leads nuevos
+                gracias a videos virales. Hay 51 clientes activos con $210K en valor.<br><br>
+                <strong>Lo malo:</strong> La conversión se desplomó. Más gente llega, pero menos convierte. El funnel
+                perdió eficiencia (-63% LP%). El CPL casi se duplicó. Y lo más grave: <strong>35% de los clientes no
+                    están pagando</strong>.<br><br>
+                <strong>La oportunidad:</strong> Hay ~$105K sin cobrar + 1,161 contactos de redes sin capturar + 117
+                no-shows/cancelados para reactivar. Antes de gastar más en ads, hay que <strong>cobrar lo que ya se
+                    vendió y capturar lo que ya llega gratis</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════ 02 — OBJETIVOS ═══════════ -->
+    <section class="section full-bleed">
+        <div class="section-inner">
+            <div class="section-tag">02 — Objetivos Q2</div>
+            <h2>A dónde vamos en <span>números</span></h2>
+            <p class="section-subtitle">Metas concretas para Q2 basadas en ticket de $5,000, presupuesto de
+                $1,000-1,500/mes, y los datos reales del pipeline.</p>
+
+            <div class="comparison">
+                <div class="comparison-col">
+                    <h3><span class="dot red"></span> Hoy (Q1 2026)</h3>
+                    <div class="comp-row"><span class="label">Clientes nuevos / Q</span><span class="val red">13</span>
+                    </div>
+                    <div class="comp-row"><span class="label">Leads / mes</span><span class="val red">~405</span></div>
+                    <div class="comp-row"><span class="label">Conversión a cliente</span><span
+                            class="val red">1.1%</span></div>
+                    <div class="comp-row"><span class="label">Clientes sin cobrar</span><span class="val red">21
+                            (35%)</span></div>
+                    <div class="comp-row"><span class="label">CPL (Ads)</span><span class="val red">$10.94</span></div>
+                    <div class="comp-row"><span class="label">Anuncios activos</span><span class="val red">1</span>
+                    </div>
+                    <div class="comp-row"><span class="label">Revenue estimado</span><span
+                            class="val red">~$15K/mes</span></div>
                 </div>
-                <div class="type-row">
-                    <span class="type-label">Headline · 800</span>
-                    <span class="type-sample" style="font-size:1.8rem; font-weight:800; letter-spacing:-0.02em;">Accede
-                        a +$200K en capital al 0%</span>
-                </div>
-                <div class="type-row">
-                    <span class="type-label">Subtitle · 600</span>
-                    <span class="type-sample"
-                        style="font-size:1.1rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Sección
-                        Destacada</span>
-                </div>
-                <div class="type-row">
-                    <span class="type-label">Body · 400</span>
-                    <span class="type-sample" style="font-size:1rem; font-weight:400;">Texto de párrafo con line-height
-                        generoso para máxima legibilidad en todos los dispositivos y contextos.</span>
-                </div>
-                <div class="type-row">
-                    <span class="type-label">Label · 300</span>
-                    <span class="type-sample"
-                        style="font-size:0.72rem; font-weight:500; text-transform:uppercase; letter-spacing:0.18em; opacity:0.5;">Categoría
-                        · Etiqueta · Meta</span>
+                <div class="arrow-col">→</div>
+                <div class="comparison-col target">
+                    <h3><span class="dot green"></span> Meta Q2 2026</h3>
+                    <div class="comp-row"><span class="label">Clientes nuevos / Q</span><span
+                            class="val green">24+</span></div>
+                    <div class="comp-row"><span class="label">Leads / mes</span><span class="val green">300+</span>
+                    </div>
+                    <div class="comp-row"><span class="label">Conversión a cliente</span><span
+                            class="val green">3-5%</span></div>
+                    <div class="comp-row"><span class="label">Tasa de cobro</span><span class="val green">90%+</span>
+                    </div>
+                    <div class="comp-row"><span class="label">CPL (Ads)</span><span class="val green">≤$6</span></div>
+                    <div class="comp-row"><span class="label">Anuncios activos</span><span class="val green">4-6</span>
+                    </div>
+                    <div class="comp-row"><span class="label">Revenue cobrado</span><span
+                            class="val gold">$40K/mes</span></div>
                 </div>
             </div>
-        </section>
-    </div>
 
-    <!-- ═══════════════ 04 · COMPONENTES ═══════════════ -->
-    <div class="section-wrapper dark">
-        <section class="section">
-            <div class="section-title">04 · Componentes</div>
-            <h2>UI Kit</h2>
-            <p class="subtitle">Componentes reutilizables para GHL, landing pages y materiales de comunicación.</p>
-
-            <!-- CTA Primary -->
-            <div class="demo-block">
-                <span class="demo-label">CTA Button — Primary</span>
-                <a href="#" class="btn-cta">Ver Clase Gratis</a>
+            <div class="note">
+                <strong>La matemática:</strong> 8 clientes/mes × $5,000 = $40K. Para cerrar 8 necesitamos ~50
+                asistencias (16% cierre) → 62 agendas (80% show) → 250 leads cualificados (25% agendan). Con CPL $6 +
+                orgánico capturado, es alcanzable con $1,500/mes en Ads + tráfico orgánico gratis que hoy no se captura.
             </div>
 
-            <!-- Outline Button -->
-            <div class="demo-block">
-                <span class="demo-label">Outline Button — Secondary</span>
-                <a href="#" class="btn-outline">Conocer Más</a>
-            </div>
-
-            <!-- Glass Button -->
-            <div class="demo-block">
-                <span class="demo-label">Glass Button — Tertiary</span>
-                <a href="#" class="btn-glass">Agendar Consulta</a>
-            </div>
-
-            <!-- Eyebrow Badge -->
-            <div class="demo-block">
-                <span class="demo-label">Eyebrow Badge</span>
-                <span class="eyebrow-badge">Capital al 0% de interés</span>
-            </div>
-
-            <!-- Testimonial -->
-            <div class="demo-block">
-                <span class="demo-label">Testimonial Card</span>
-                <div class="testimonial-card">
-                    <p class="quote">"Gracias al método de Walter pude acceder a más de $100,000 en capital al 0% para
-                        mi negocio. Algo que creía imposible hace 3 meses."</p>
-                    <p class="author">— Ana de Orbegoso · Cliente CréditoTop</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ═══════════════ 05 · FOTOGRAFÍA ═══════════════ -->
-    <div class="section-wrapper light">
-        <section class="section">
-            <div class="section-title">05 · Dirección Visual</div>
-            <h2>Visual Direction</h2>
-
-            <div class="voice-grid">
-                <div class="voice-card">
-                    <div class="attr">Iluminación</div>
-                    <div class="val">Natural + Studio</div>
-                </div>
-                <div class="voice-card">
-                    <div class="attr">Mood</div>
-                    <div class="val">Confianza · Aspiracional</div>
-                </div>
-                <div class="voice-card">
-                    <div class="attr">Composición</div>
-                    <div class="val">Centrada · Limpia</div>
-                </div>
-                <div class="voice-card">
-                    <div class="attr">Color</div>
-                    <div class="val">Tonos navy + verdes</div>
-                </div>
-                <div class="voice-card">
-                    <div class="attr">Pose / Estilo</div>
-                    <div class="val">Profesional · Empoderado</div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ═══════════════ 06 · TONO DE VOZ ═══════════════ -->
-    <div class="section-wrapper dark">
-        <section class="section">
-            <div class="section-title">06 · Tono de Voz</div>
-            <h2>Brand Voice</h2>
-
-            <div class="voice-grid">
-                <div class="voice-card">
-                    <div class="attr">Idioma</div>
-                    <div class="val">Español (US Latino)</div>
-                </div>
-                <div class="voice-card">
-                    <div class="attr">Tono</div>
-                    <div class="val">Directo · Educativo</div>
-                </div>
-                <div class="voice-card">
-                    <div class="attr">Perspectiva</div>
-                    <div class="val">1ª persona + tú</div>
-                </div>
-                <div class="voice-card">
-                    <div class="attr">Energía</div>
-                    <div class="val">Alta · Empoderada</div>
-                </div>
-            </div>
-
-            <h3 style="font-size:0.8rem; margin:48px 0 20px; opacity:0.5; font-weight:700;">Frases Clave de la Marca
+            <h3 style="font-size:14px; font-weight:600; margin:40px 0 16px; color:var(--gray-400);">Funnel objetivo Q2:
             </h3>
-            <ul style="list-style:none; padding:0;">
-                <li
-                    style="padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.04); font-style:italic; opacity:0.75;">
-                    "Lo que hoy parece un límite, mañana puede ser tu punto de partida."</li>
-                <li
-                    style="padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.04); font-style:italic; opacity:0.75;">
-                    "No es que el sistema no sea para ti. Es que nadie te ha enseñado cómo funciona."</li>
-                <li
-                    style="padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.04); font-style:italic; opacity:0.75;">
-                    "Los bancos no prestan al número. Prestan al perfil detrás del número."</li>
-                <li
-                    style="padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.04); font-style:italic; opacity:0.75;">
-                    "Accede a capital de forma garantizada, al 0%, sin facturación y sin importar tu estatus."</li>
-            </ul>
+            <div class="funnel-flow">
+                <div class="funnel-step">
+                    <div class="f-label">Inversión</div>
+                    <div class="f-value">$1,500</div>
+                    <div class="f-pct">/ mes</div>
+                </div>
+                <div class="funnel-arrow">→</div>
+                <div class="funnel-step">
+                    <div class="f-label">Leads</div>
+                    <div class="f-value">300</div>
+                    <div class="f-pct">Paid + Orgánico</div>
+                </div>
+                <div class="funnel-arrow">→</div>
+                <div class="funnel-step">
+                    <div class="f-label">Agendas</div>
+                    <div class="f-value">62</div>
+                    <div class="f-pct">25%</div>
+                </div>
+                <div class="funnel-arrow">→</div>
+                <div class="funnel-step">
+                    <div class="f-label">Asisten</div>
+                    <div class="f-value">50</div>
+                    <div class="f-pct">80%</div>
+                </div>
+                <div class="funnel-arrow">→</div>
+                <div class="funnel-step">
+                    <div class="f-label">Cierres</div>
+                    <div class="f-value" style="color:var(--gold);">8</div>
+                    <div class="f-pct">16%</div>
+                </div>
+                <div class="funnel-arrow">→</div>
+                <div class="funnel-step" style="border-color:var(--gold);">
+                    <div class="f-label">Revenue</div>
+                    <div class="f-value" style="color:var(--gold);">$40K</div>
+                    <div class="f-pct">ROAS 26x</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <h3 style="font-size:0.8rem; margin:48px 0 20px; opacity:0.5; font-weight:700;">Qué decir vs Qué NO decir
-            </h3>
-            <div class="dos-donts-grid">
-                <div class="dos-col">
-                    <h4>✅ Sí decir</h4>
+    <!-- ═══════════ 03 — ESTRATEGIA ═══════════ -->
+    <section class="section">
+        <div class="section-tag">03 — Plan de Acción</div>
+        <h2>Priorizado por <span>impacto inmediato</span></h2>
+        <p class="section-subtitle">Lo que se debe hacer primero es lo que más rápido mueve la aguja, con la menor
+            inversión.</p>
+
+        <!-- PHASE 1 — URGENT -->
+        <div class="phase p1">
+            <div class="phase-header">
+                <div>
+                    <div class="phase-number">🔴 Acción Inmediata — Semana 1</div>
+                    <h3>Cobrar lo que ya se vendió</h3>
+                </div>
+                <div class="phase-timeline">Esta semana</div>
+            </div>
+            <p style="color:var(--gray-400); font-size:14px; margin-bottom:20px;">
+                <strong style="color:var(--red);">$105K+ en servicios entregados sin cobrar.</strong> Esta es la acción
+                de mayor ROI posible: no requiere ni un peso de inversión, solo gestión de cobro.
+            </p>
+            <div class="action-grid">
+                <div class="action-card">
+                    <h4>💰 Recuperar pagos pendientes</h4>
                     <ul>
-                        <li>"Capital estratégico", "perfil crediticio", "acompañamiento 1:1"</li>
-                        <li>"Método probado con +70 emprendedores"</li>
-                        <li>"Sin intereses, de forma garantizada"</li>
-                        <li>Terminología financiera precisa en inglés cuando aplica</li>
+                        <li><strong>21 clientes pendientes</strong> — contactar cada uno esta semana</li>
+                        <li>Secuencia: WhatsApp → Llamada → Email con factura</li>
+                        <li>Ofrecer <strong>plan de pagos</strong> si no pueden pagar de una vez</li>
+                        <li>Meta: recuperar mínimo <strong>$50K en 2 semanas</strong></li>
                     </ul>
                 </div>
-                <div class="donts-col">
-                    <h4>❌ No decir</h4>
+                <div class="action-card">
+                    <h4>📋 Definir política de cobro</h4>
                     <ul>
-                        <li>"Dinero fácil", "hazte rico rápido", "sin esfuerzo"</li>
-                        <li>"Reparamos tu crédito" (no somos reparadora)</li>
-                        <li>Prometer resultados sin contexto de perfil</li>
-                        <li>Lenguaje informal excesivo o jerga callejera</li>
+                        <li>Eliminar "cobro al final" sin enganche (alto riesgo)</li>
+                        <li><strong>Mínimo 50% upfront</strong> antes de empezar</li>
+                        <li>Contratos claros con fechas de pago</li>
+                        <li>Alertas automáticas GHL cuando un pago se atrasa</li>
                     </ul>
                 </div>
             </div>
-        </section>
-    </div>
-
-    <!-- ═══════════════ 07 · DESIGN TOKENS ═══════════════ -->
-    <div class="section-wrapper light">
-        <section class="section">
-            <div class="section-title">07 · Design Tokens</div>
-            <h2>CSS Variables</h2>
-            <p class="subtitle">Variables listas para copiar en GHL Custom CSS, landing pages y cualquier asset digital.
-            </p>
-
-            <div class="code-block">
-                <pre><span class="comment">/* ── CréditoTop Design Tokens ── */</span>
-:root {
-    <span class="comment">/* ── Colores Base ── */</span>
-    --brand-navy: #002E5D;
-    --brand-navy-deep: #001A3A;
-    --brand-navy-mid: #0A3D6B;
-    --brand-white: #F8FAFB;
-    --brand-text: #C8D6E0;
-    --brand-gray-mid: #5A7A8F;
-
-    <span class="comment">/* ── Acento ── */</span>
-    --brand-accent: #2ECC71;
-    --brand-accent-light: #54D98C;
-    --brand-accent-deep: #1FA85A;
-    --brand-accent-glow: rgba(46, 204, 113, 0.15);
-    --brand-accent-gradient: linear-gradient(135deg, #2ECC71, #1FA85A);
-
-    <span class="comment">/* ── Overlays ── */</span>
-    --brand-overlay-hero: rgba(0, 26, 58, 0.75);
-    --brand-overlay-card: rgba(255, 255, 255, 0.025);
-
-    <span class="comment">/* ── Tipografía ── */</span>
-    --brand-font: 'Inter', -apple-system, sans-serif;
-
-    <span class="comment">/* ── Espaciado ── */</span>
-    --brand-radius: 16px;
-    --brand-radius-lg: 24px;
-    --brand-max-content: 860px;
-    --brand-transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    --brand-shadow-card: 0 8px 32px rgba(0, 0, 0, 0.25);
-    --brand-shadow-glow: 0 0 40px var(--brand-accent-glow);
-}</pre>
+            <div class="note danger">
+                <strong>Impacto inmediato:</strong> Si se cobran $50K de los pendientes + 8 cierres nuevos/mes × $5K =
+                $40K, revenue real podría alcanzar $90K en el Q2 solo con mejor gestión de cobro.
             </div>
-        </section>
-    </div>
+        </div>
 
-    <!-- ═══════════════ 08 · USOS INCORRECTOS ═══════════════ -->
-    <div class="section-wrapper dark">
-        <section class="section">
-            <div class="section-title">08 · Usos Incorrectos</div>
-            <h2>Don'ts</h2>
+        <!-- PHASE 2 — CAPTURE -->
+        <div class="phase p2">
+            <div class="phase-header">
+                <div>
+                    <div class="phase-number">🟡 Fase 2 — Fundación</div>
+                    <h3>Capturar el tráfico que ya llega gratis</h3>
+                </div>
+                <div class="phase-timeline">Semana 1-2</div>
+            </div>
+            <p style="color:var(--gray-400); font-size:14px; margin-bottom:20px;">
+                <strong style="color:var(--gold);">1,161 contactos de redes</strong> que nunca dejaron datos. Con una
+                tasa de captura del 5%, son +58 leads/mes GRATIS.
+            </p>
+            <div class="action-grid">
+                <div class="action-card">
+                    <h4>🔧 Arreglar el Funnel (LP% de 26% → 60%+)</h4>
+                    <ul>
+                        <li>Algo rompió la conversión (69% → 26%): <strong>diagnosticar y arreglar</strong></li>
+                        <li>Agregar <strong>social proof</strong> antes del formulario</li>
+                        <li>Urgencia: timer + plazas limitadas</li>
+                        <li>Optimizar para <strong>mobile</strong> (80%+ de tráfico orgánico)</li>
+                    </ul>
+                </div>
+                <div class="action-card">
+                    <h4>📲 Capturar orgánico</h4>
+                    <ul>
+                        <li><strong>Link en bio</strong> directo al registro (no Linktree genérico)</li>
+                        <li>CTAs en cada video: "Comenta CLASE" + <strong>IA responde con link</strong></li>
+                        <li>Story → Swipe up al registro (diario)</li>
+                        <li>Formulario simplificado: solo nombre + teléfono + email</li>
+                    </ul>
+                </div>
+                <div class="action-card">
+                    <h4>🔄 Reactivar pipeline frío</h4>
+                    <ul>
+                        <li><strong>117 no-shows/cancelados</strong> con $380K en valor potencial</li>
+                        <li><strong>39 "No Compró"</strong> con $160K en valor — re-contactar</li>
+                        <li>Secuencia de reactivación: WhatsApp + oferta especial</li>
+                        <li>Meta: recuperar <strong>5-10% = 8-15 citas</strong></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Meta Fase 2:</strong> LP% de vuelta a >60%. Capturar 5%+ del orgánico (+58 leads/mes gratis).
+                Reactivar 10+ citas del pipeline frío.
+            </div>
+        </div>
 
-            <ul class="donts-list">
-                <li><span class="icon">🚫</span> Usar colores de acento no autorizados — solo Esmeralda Capital
-                    (#2ECC71) y sus variantes</li>
-                <li><span class="icon">🚫</span> Usar el verde como color dominante — máx 10–15% de presencia visual
-                </li>
-                <li><span class="icon">🚫</span> Tipografías no autorizadas — solo Inter para todo, nunca Arial/Times
-                </li>
-                <li><span class="icon">🚫</span> Fondos blancos planos sin navy — el look premium requiere modo oscuro o
-                    navy deep</li>
-                <li><span class="icon">🚫</span> Border-radius menor a 12px en cards — el look es redondeado y suave
-                </li>
-                <li><span class="icon">🚫</span> Imágenes sin overlay navy — el texto necesita contraste y consistencia
-                </li>
-                <li><span class="icon">🚫</span> Texto centrado sin max-width — pierde legibilidad y look premium</li>
-                <li><span class="icon">🚫</span> CTAs sin gradient o glow — los botones deben sentirse premium y
-                    clickeables</li>
-            </ul>
-        </section>
-    </div>
+        <!-- PHASE 3 — ADS -->
+        <div class="phase p3">
+            <div class="phase-header">
+                <div>
+                    <div class="phase-number">🔵 Fase 3 — Aceleración</div>
+                    <h3>Optimizar Ads y escalar tráfico pago</h3>
+                </div>
+                <div class="phase-timeline">Semana 2-4</div>
+            </div>
+            <p style="color:var(--gray-400); font-size:14px; margin-bottom:20px;">
+                <strong style="color:var(--blue);">Solo hay 1 anuncio activo.</strong> El CPL subió 95% porque Meta no
+                tiene variedad para optimizar. Necesitamos 4+ ángulos + retargeting.
+            </p>
+            <div class="action-grid">
+                <div class="action-card">
+                    <h4>🎯 4+ ángulos de tráfico frío</h4>
+                    <ul>
+                        <li><strong>Testimonio:</strong> Ana de Orbegoso — "Ella accedió a $X,000"</li>
+                        <li><strong>Educativo:</strong> "3 errores que te cuestan $100K"</li>
+                        <li><strong>Comparación:</strong> "MCA al 40% vs Capital al 0%"</li>
+                        <li><strong>Autoridad:</strong> "+$15M gestionado, +70 clientes"</li>
+                        <li>$30/día por ad set, testear 1-2 semanas</li>
+                    </ul>
+                </div>
+                <div class="action-card">
+                    <h4>🔄 Retargeting (nunca hecho)</h4>
+                    <ul>
+                        <li>Público: web visitors, registrados no agendados, video 75%+</li>
+                        <li>Ángulos: testimonio, urgencia, objeciones</li>
+                        <li>Presupuesto: $10-15/día (convierte más barato)</li>
+                        <li>Meta: <strong>bajar CPL de $10.94 a ≤$6</strong></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Meta Fase 3:</strong> CPL ≤$6, 4+ anuncios activos, retargeting activado. Llevar leads mensuales
+                de paid a 200+.
+            </div>
+        </div>
 
-    <!-- ═══════════════ FOOTER ═══════════════ -->
-    <footer class="brand-footer">
-        <p>Manual de Marca v1.0 — CréditoTop — Marzo 2026</p>
-        <p style="margin-top:4px;">Diseñado por Sales Velocity</p>
-    </footer>
+        <!-- PHASE 4 — SCALE -->
+        <div class="phase p4">
+            <div class="phase-header">
+                <div>
+                    <div class="phase-number">🟢 Fase 4 — Escala</div>
+                    <h3>Sistemizar ventas y contenido</h3>
+                </div>
+                <div class="phase-timeline">Semana 4-8</div>
+            </div>
+            <div class="action-grid">
+                <div class="action-card">
+                    <h4>📞 Pipeline de ventas optimizado</h4>
+                    <ul>
+                        <li>Etapas claras: Lead → Contactado → Agendado → Asistió → Cierre → <strong>Cobrado</strong>
+                        </li>
+                        <li>Alertas internas cuando lead avanza de etapa</li>
+                        <li>Secuencia no-show recovery: SMS + WhatsApp + llamada 24h</li>
+                        <li>Follow-up post-cita para los 39 "No Compró"</li>
+                    </ul>
+                </div>
+                <div class="action-card">
+                    <h4>📹 Contenido y YouTube</h4>
+                    <ul>
+                        <li>YouTube: 1 video/semana, formato educativo</li>
+                        <li>Contenido orgánico como "presuavizador" de venta</li>
+                        <li>Casos de éxito en video → ad creative + feed</li>
+                        <li>Noticias virales diarias (N8N) → engagement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Meta Fase 4:</strong> Tasa de cierre 16%+, tasa de cobro 90%+, YouTube activo. Revenue cobrado
+                $40K/mes.
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ 04 — DECISIONES ═══════════ -->
+    <section class="section full-bleed">
+        <div class="section-inner">
+            <div class="section-tag">04 — Decisiones y Siguientes Pasos</div>
+            <h2>Lo que necesitamos <span>definir hoy</span></h2>
+            <p class="section-subtitle">Puntos que requieren decisión de Walter para arrancar.</p>
+
+            <ol class="decisions">
+                <li>
+                    <div>
+                        <strong>Plan de cobro de los 21 pendientes</strong>
+                        <span>¿Cómo procedemos? Hay $105K+ sin cobrar. Recomendación: contactar esta semana con opción
+                            de plan de pagos. Definir política de mínimo 50% upfront para futuros clientes.</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Presupuesto de Ads Q2</strong>
+                        <span>¿Mantenemos $1,000/mes o subimos a $1,500? La diferencia puede significar +60 leads/mes.
+                            Recomendación: arrancar en $1,200, escalar a $1,500 cuando haya 2+ anuncios
+                            ganadores.</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Landing page: ¿rediseño o iteración?</strong>
+                        <span>LP% cayó de 69% a 26%. Recomendación: optimizar la actual primero (1 semana), si no
+                            mejora, rediseñar completa.</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Testimonio de Ana de Orbegoso</strong>
+                        <span>Material grabado y ad set creado sin gastar. ¿Lo activamos esta semana como primer
+                            retargeting? Recomendación: SÍ, activar inmediatamente.</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Eliminación de "cobro al final" sin enganche</strong>
+                        <span>Hay 8 clientes trabajando sin haber pagado nada. ¿Cambiamos la política? Recomendación:
+                            SÍ, mínimo 50% antes de empezar.</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>YouTube: ¿arrancamos en Q2?</strong>
+                        <span>Walter ya tiene el setup. Solo falta ser consistente. Los videos virales ya demostraron
+                            que el contenido funciona. Recomendación: SÍ, 1 video/semana.</span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ═══════════ 05 — RESUMEN ═══════════ -->
+    <section class="section">
+        <div class="section-tag">05 — Resumen Ejecutivo</div>
+        <h2>El camino a <span>$40K/mes cobrados</span></h2>
+        <p class="section-subtitle">Acciones priorizadas por velocidad de impacto.</p>
+
+        <div class="metrics-grid">
+            <div class="metric-card danger">
+                <div class="metric-label">Semana 1</div>
+                <div class="metric-value red" style="font-size:16px;">Cobrar pendientes</div>
+                <div class="metric-detail">$105K+ en clientes sin pagar</div>
+            </div>
+            <div class="metric-card highlight">
+                <div class="metric-label">Semana 1-2</div>
+                <div class="metric-value gold" style="font-size:16px;">Capturar orgánico</div>
+                <div class="metric-detail">1,161 contactos de redes sin capturar</div>
+            </div>
+            <div class="metric-card" style="border-color:var(--blue);">
+                <div class="metric-label">Semana 2-4</div>
+                <div class="metric-value" style="font-size:16px; color:var(--blue);">Escalar Ads</div>
+                <div class="metric-detail">4+ ángulos + retargeting</div>
+            </div>
+            <div class="metric-card success">
+                <div class="metric-label">Semana 4-8</div>
+                <div class="metric-value green" style="font-size:16px;">Sistemizar</div>
+                <div class="metric-detail">Pipeline + YouTube + escala</div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <h4>📌 La idea central</h4>
+            <p>CréditoTop ya tiene el tráfico, la autoridad y 51 clientes activos. El problema no es generar más — es
+                <strong>cobrar lo que ya se vendió</strong> ($105K pendientes), <strong>capturar lo que ya llega
+                    gratis</strong> (1,161 contactos de redes), y <strong>diversificar los anuncios</strong> (dejar de
+                depender de 1 solo). Con estas 3 acciones, el revenue cobrado puede pasar de ~$15K/mes a $40K/mes en 60
+                días.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="footer">
+        <div class="brand">Sales Velocity × CréditoTop</div>
+        <p>Estrategia Q2 2026 · Preparado para Walter Pagano · 6 de Marzo 2026</p>
+        <p style="margin-top:12px; font-size:11px; color:var(--gray-400);">Datos basados en pipeline GHL (2,028 leads +
+            60 clientes), Dashboard Q4-Q1, Tracker de campañas, y Meta Ads. Ticket promedio: $5,000.</p>
+    </section>
 
 </body>
 
