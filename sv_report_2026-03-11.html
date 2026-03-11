@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Ads Review V2 — Walter Pagano | 11 Marzo 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-green: #2ECC71; --brand-green-deep: #1FA85A;
+            --brand-green-light: #54D98C; --brand-green-glow: rgba(46,204,113,0.15);
+            --brand-gradient: linear-gradient(135deg, #2ECC71, #1FA85A);
+            --bg-primary: #0a0e1a; --bg-card: rgba(16,22,40,0.85);
+            --border-subtle: rgba(46,204,113,0.12); --border-active: rgba(46,204,113,0.35);
+            --text-primary: #f0f2f5; --text-secondary: rgba(240,242,245,0.65);
+            --text-muted: rgba(240,242,245,0.4);
+            --green: #2ECC71; --yellow: #F1C40F; --red: #E74C3C; --blue: #3498DB;
+            --orange: #E67E22; --purple: #9B59B6;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:var(--bg-primary); color:var(--text-primary); line-height:1.6; }
+        body::before { content:''; position:fixed; inset:0; background:radial-gradient(ellipse at 20% 50%,rgba(46,204,113,0.06) 0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(31,168,90,0.04) 0%,transparent 50%); pointer-events:none; z-index:0; }
+        .container { max-width:1200px; margin:0 auto; padding:20px; position:relative; z-index:1; }
+        .header { text-align:center; padding:50px 20px 30px; }
+        .header-badge { display:inline-flex; align-items:center; gap:8px; background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:100px; padding:6px 18px; font-size:0.75rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--brand-green); margin-bottom:20px; backdrop-filter:blur(10px); }
+        .header-badge .dot { width:6px; height:6px; background:var(--brand-green); border-radius:50%; animation:pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(46,204,113,0.4)} 50%{opacity:0.7;box-shadow:0 0 0 6px rgba(46,204,113,0)} }
+        .header h1 { font-size:clamp(1.8rem,5vw,3rem); font-weight:800; letter-spacing:-0.03em; margin-bottom:8px; background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,0.7) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .header h1 span { background:var(--brand-gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .header-sub { font-size:1rem; color:var(--text-secondary); }
+        .review-tag { display:inline-block; background:var(--brand-gradient); color:#fff; font-size:0.7rem; font-weight:700; padding:3px 10px; border-radius:100px; margin-left:8px; vertical-align:middle; }
+
+        .section { margin:36px 0; }
+        .section-label { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+        .section-num { font-family:'JetBrains Mono',monospace; font-size:0.7rem; font-weight:600; color:var(--brand-green); background:var(--brand-green-glow); border:1px solid var(--border-subtle); padding:4px 10px; border-radius:8px; }
+        .section-title { font-size:1.1rem; font-weight:700; }
+
+        .card { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:16px; padding:24px; backdrop-filter:blur(12px); margin-bottom:16px; position:relative; overflow:hidden; }
+        .card-accent { border-top:3px solid; border-image:var(--brand-gradient) 1; }
+
+        .verdict-header { display:flex; align-items:center; gap:16px; margin-bottom:16px; }
+        .verdict-icon { width:52px; height:52px; background:rgba(46,204,113,0.12); border:1px solid rgba(46,204,113,0.25); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.6rem; }
+        .verdict-title { font-size:0.68rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); margin-bottom:4px; }
+        .verdict-status { font-size:1.2rem; font-weight:700; }
+        .verdict-text { font-size:0.95rem; line-height:1.75; color:var(--text-secondary); }
+        .verdict-text strong { color:var(--text-primary); }
+        .hl-green { color:var(--green); font-weight:600; }
+        .hl-yellow { color:var(--yellow); font-weight:600; }
+        .hl-red { color:var(--red); font-weight:600; }
+
+        .kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:14px; }
+        .kpi-card { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:14px; padding:18px; transition:all 0.3s ease; position:relative; }
+        .kpi-card:hover { border-color:var(--border-active); transform:translateY(-2px); box-shadow:0 8px 32px rgba(46,204,113,0.08); }
+        .kpi-label { font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:6px; font-weight:600; }
+        .kpi-value { font-size:1.6rem; font-weight:800; font-family:'JetBrains Mono',monospace; margin-bottom:4px; }
+        .kpi-sub { font-size:0.7rem; color:var(--text-muted); }
+        .kpi-sub span { font-weight:600; }
+        .dot-status { width:8px; height:8px; border-radius:50%; position:absolute; top:14px; right:14px; }
+        .dot-g { background:var(--green); box-shadow:0 0 8px rgba(46,204,113,0.5); }
+        .dot-y { background:var(--yellow); box-shadow:0 0 8px rgba(241,196,15,0.5); }
+        .dot-r { background:var(--red); box-shadow:0 0 8px rgba(231,76,60,0.5); }
+
+        .tbl { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:16px; overflow:hidden; }
+        .tbl table { width:100%; border-collapse:collapse; font-size:0.82rem; }
+        .tbl th { background:rgba(46,204,113,0.06); padding:12px 14px; text-align:left; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); font-weight:600; border-bottom:1px solid var(--border-subtle); }
+        .tbl td { padding:10px 14px; border-bottom:1px solid rgba(255,255,255,0.03); color:var(--text-secondary); }
+        .tbl tr:hover td { background:rgba(46,204,113,0.03); }
+        .tbl td:first-child { color:var(--text-primary); font-weight:500; }
+        .mono { font-family:'JetBrains Mono',monospace; font-size:0.8rem; }
+
+        .tag { display:inline-block; padding:2px 8px; border-radius:6px; font-size:0.65rem; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; }
+        .tag-hero { background:rgba(46,204,113,0.12); color:var(--green); }
+        .tag-test { background:rgba(52,152,219,0.12); color:var(--blue); }
+        .tag-paused { background:rgba(231,76,60,0.1); color:var(--red); }
+        .tag-active { background:rgba(46,204,113,0.12); color:var(--green); }
+
+        .funnel-bar { display:flex; align-items:center; gap:10px; margin:6px 0; }
+        .funnel-label { width:160px; font-size:0.82rem; text-align:right; color:var(--text-secondary); flex-shrink:0; }
+        .funnel-track { flex:1; height:28px; background:rgba(255,255,255,0.03); border-radius:8px; overflow:hidden; position:relative; }
+        .funnel-fill { height:100%; border-radius:8px; display:flex; align-items:center; padding:0 10px; font-size:0.72rem; font-weight:600; color:#fff; min-width:fit-content; transition:width 0.6s ease; }
+        .funnel-count { font-size:0.82rem; font-weight:700; color:var(--text-primary); width:30px; text-align:center; flex-shrink:0; }
+
+        .lead-row { display:flex; align-items:center; gap:12px; padding:10px 14px; border-bottom:1px solid rgba(255,255,255,0.03); font-size:0.82rem; }
+        .lead-row:last-child { border-bottom:none; }
+        .lead-row:hover { background:rgba(46,204,113,0.03); }
+        .lead-emoji { font-size:1.1rem; flex-shrink:0; }
+        .lead-name { font-weight:600; color:var(--text-primary); min-width:160px; }
+        .lead-stage { color:var(--text-secondary); min-width:140px; }
+        .lead-date { color:var(--text-muted); font-family:'JetBrains Mono',monospace; font-size:0.75rem; min-width:80px; }
+        .lead-src { color:var(--text-muted); font-size:0.72rem; }
+
+        .campaign-block { margin-bottom:20px; }
+        .campaign-header { display:flex; align-items:center; justify-content:space-between; padding:16px; background:rgba(46,204,113,0.04); border-radius:12px 12px 0 0; border:1px solid var(--border-subtle); border-bottom:none; }
+        .campaign-name { font-weight:700; font-size:0.95rem; }
+        .campaign-stats { display:flex; gap:16px; font-size:0.78rem; color:var(--text-secondary); }
+        .campaign-stats .mono { color:var(--text-primary); }
+        .campaign-body { border:1px solid var(--border-subtle); border-radius:0 0 12px 12px; overflow:hidden; }
+
+        .reason-box { background:rgba(231,76,60,0.06); border:1px solid rgba(231,76,60,0.15); border-radius:10px; padding:14px 18px; margin-top:12px; font-size:0.85rem; color:var(--text-secondary); }
+        .reason-box strong { color:var(--red); }
+
+        .winner-box { background:rgba(46,204,113,0.06); border:1px solid rgba(46,204,113,0.15); border-radius:10px; padding:14px 18px; margin-top:12px; font-size:0.85rem; color:var(--text-secondary); }
+        .winner-box strong { color:var(--green); }
+
+        .quality-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+        .q-card { border-radius:12px; padding:16px; text-align:center; }
+        .q-card .q-num { font-size:2rem; font-weight:800; font-family:'JetBrains Mono',monospace; }
+        .q-card .q-label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; margin-top:4px; }
+        .q-card .q-pct { font-size:0.85rem; font-weight:600; margin-top:2px; }
+
+        .footer { text-align:center; padding:40px 20px; border-top:1px solid var(--border-subtle); margin-top:50px; }
+        .footer-brand { font-size:0.72rem; color:var(--text-muted); letter-spacing:0.08em; text-transform:uppercase; }
+        .footer-brand span { color:var(--brand-green); }
+
+        @media(max-width:768px) {
+            .container { padding:12px; }
+            .kpi-grid { grid-template-columns:repeat(2,1fr); }
+            .quality-grid { grid-template-columns:repeat(2,1fr); }
+            .funnel-label { width:100px; font-size:0.72rem; }
+            .lead-row { flex-wrap:wrap; }
+            .campaign-header { flex-direction:column; gap:8px; }
+            .tbl { overflow-x:auto; }
+            .tbl table { min-width:600px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <header class="header">
+        <div class="header-badge"><span class="dot"></span> Sales Velocity × CréditoTop</div>
+        <h1>META ADS <span>REVIEW</span></h1>
+        <p class="header-sub">Walter Pagano — 11 de Marzo 2026 <span class="review-tag">V2 — CON PIPELINE</span></p>
+    </header>
+
+    <!-- 01 VEREDICTO -->
+    <div class="card card-accent">
+        <div class="verdict-header">
+            <div class="verdict-icon">🟢</div>
+            <div>
+                <div class="verdict-title">01 — Veredicto Ejecutivo</div>
+                <div class="verdict-status" style="color:var(--green)">CAMPAÑA GANADORA CONFIRMADA + PIPELINE ACTIVO</div>
+            </div>
+        </div>
+        <p class="verdict-text">
+            Desde la reunión del <strong>6 de marzo</strong>, las campañas de Walter han generado <span class="hl-green">19 registros vía Meta Ads</span> con un CPR combinado de <span class="hl-green">$12.71</span>. La campaña <strong>"SI ERES DUEÑO DE NEGOCIO"</strong> es la clara ganadora con <span class="hl-green">15 registros a $8.19</span>. La campaña "PRUEBA" (4 ads nuevos) probó ángulos diferentes — <span class="hl-red">3 de 4 ads se apagaron por no generar registros</span>; el ganador (#4 "PORQUE ALGUNOS NEGOCIOS") sobrevivió con <span class="hl-yellow">4 registros a $18.95</span>. En el pipeline GHL: de 20 leads Meta, <span class="hl-green">5 (25%) avanzaron</span> a etapas calientes/agenda, <span class="hl-yellow">11 (55%) están pendientes</span> en etapa LEAD, y <span class="hl-red">4 (20%) salieron</span> del funnel. <strong>Tasa de agendamiento Meta Ads: 10% (2 de 20 agendaron con closer).</strong>
+        </p>
+    </div>
+
+    <!-- 02 KPIs -->
+    <div class="section">
+        <div class="section-label">
+            <span class="section-num">02</span>
+            <h2 class="section-title">KPIs Consolidados — 6 al 11 Marzo</h2>
+        </div>
+        <div class="kpi-grid">
+            <div class="kpi-card"><div class="dot-status dot-g"></div><div class="kpi-label">Registros Totales</div><div class="kpi-value" style="color:var(--green)">19</div><div class="kpi-sub">Meta Ads → GHL</div></div>
+            <div class="kpi-card"><div class="dot-status dot-g"></div><div class="kpi-label">CPR Promedio</div><div class="kpi-value" style="color:var(--green)">$12.71</div><div class="kpi-sub">Benchmark: <span>$27.66</span></div></div>
+            <div class="kpi-card"><div class="dot-status dot-g"></div><div class="kpi-label">Gasto Total</div><div class="kpi-value">$241</div><div class="kpi-sub">2 campañas activas</div></div>
+            <div class="kpi-card"><div class="dot-status dot-g"></div><div class="kpi-label">CTR</div><div class="kpi-value" style="color:var(--green)">2.68%</div><div class="kpi-sub">Benchmark: <span>0.85-1.30%</span></div></div>
+            <div class="kpi-card"><div class="dot-status dot-y"></div><div class="kpi-label">Agendaron</div><div class="kpi-value" style="color:var(--yellow)">2</div><div class="kpi-sub">10% de leads Meta</div></div>
+            <div class="kpi-card"><div class="dot-status dot-g"></div><div class="kpi-label">Cualificados</div><div class="kpi-value" style="color:var(--green)">5</div><div class="kpi-sub">25% del total</div></div>
+            <div class="kpi-card"><div class="dot-status dot-g"></div><div class="kpi-label">En Pipeline</div><div class="kpi-value">28</div><div class="kpi-sub">20 Meta + 7 orgánico + 1 otro</div></div>
+            <div class="kpi-card"><div class="dot-status dot-g"></div><div class="kpi-label">Frecuencia</div><div class="kpi-value">1.18</div><div class="kpi-sub">Saludable (<span>&lt;3.0</span>)</div></div>
+        </div>
+    </div>
+
+    <!-- 03 CAMPAÑAS (DETALLE) -->
+    <div class="section">
+        <div class="section-label">
+            <span class="section-num">03</span>
+            <h2 class="section-title">Desglose por Campaña — Ads Activos y Apagados</h2>
+        </div>
+
+        <!-- Campaign 1: TRAFICO FRIO -->
+        <div class="campaign-block">
+            <div class="campaign-header">
+                <div>
+                    <div class="campaign-name">�� TRAFICO FRIO — VENTAS — MEDIA/ALTA (REGISTRO)</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px">1 ad set · 1 ad activo · Conversiones estrategia</div>
+                </div>
+                <div class="campaign-stats">
+                    <div>Gasto: <span class="mono">$122.84</span></div>
+                    <div>Registros: <span class="mono" style="color:var(--green)">15</span></div>
+                    <div>CPR: <span class="mono" style="color:var(--green)">$8.19</span></div>
+                </div>
+            </div>
+            <div class="campaign-body">
+                <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
+                    <thead><tr>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">Ad</th>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">Status</th>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">Gasto</th>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">Reg.</th>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">CPR</th>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">CTR</th>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">Reach</th>
+                    </tr></thead>
+                    <tbody>
+                        <tr><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--text-primary);font-weight:600">SI ERES DUEÑO DE NEGOCIO</td><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)"><span class="tag tag-active">✅ ACTIVO</span></td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">$122.84</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--green);font-weight:700">15</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--green)">$8.19</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">2.59%</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">2,339</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="winner-box">
+                <strong>🏆 Ganador absoluto.</strong> Este ad genera el 79% de todos los registros a menos de un tercio del benchmark de la industria. CPR consistente todos los días: Mar 6 (4), Mar 7 (1), Mar 8 (2), Mar 9 (4), Mar 10 (4). <strong>Decisión: mantener activo, es el motor del funnel.</strong>
+            </div>
+        </div>
+
+        <!-- Campaign 2: PRUEBA -->
+        <div class="campaign-block">
+            <div class="campaign-header">
+                <div>
+                    <div class="campaign-name">🧪 CAMPAÑA FRIO — VENTAS — REGISTRO (PRUEBA)</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px">1 ad set "PRUEBA" · 4 ads (3 apagados, 1 ganador) · Volume/Valor/Valor × Reach</div>
+                </div>
+                <div class="campaign-stats">
+                    <div>Gasto: <span class="mono">$118.80</span></div>
+                    <div>Registros: <span class="mono" style="color:var(--yellow)">4</span></div>
+                    <div>CPR: <span class="mono" style="color:var(--yellow)">$29.70</span></div>
+                </div>
+            </div>
+            <div class="campaign-body">
+                <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
+                    <thead><tr>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">Ad</th>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">Status</th>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">Gasto</th>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">Reg.</th>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">CPR</th>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">CTR</th>
+                        <th style="padding:10px 14px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border-subtle);background:rgba(46,204,113,0.03)">¿Por qué?</th>
+                    </tr></thead>
+                    <tbody>
+                        <tr style="background:rgba(46,204,113,0.03)"><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--text-primary);font-weight:600">4. PORQUE ALGUNOS NEGOCIOS</td><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)"><span class="tag tag-active">✅ ACTIVO</span></td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">$75.78</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--green);font-weight:700">4</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--yellow)">$18.95</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">3.20%</td><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);font-size:0.78rem;color:var(--green)">Ganador del ad set — único con conversiones</td></tr>
+                        <tr style="opacity:0.6"><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--text-primary)">1. SI TU NEGOCIO NO CRECE</td><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)"><span class="tag tag-paused">⏸️ APAGADO</span></td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">$31.04</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">0</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--text-muted)">—</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">2.05%</td><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);font-size:0.78rem;color:var(--red)">$31 gastados sin registros → CPR infinito</td></tr>
+                        <tr style="opacity:0.6"><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--text-primary)">2. SI TE DIJERA QUE MUCHOS</td><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)"><span class="tag tag-paused">⏸️ APAGADO</span></td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">$11.01</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">0</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--text-muted)">—</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">3.03%</td><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);font-size:0.78rem;color:var(--red)">Buen CTR pero 0 conversiones → hook no cierra</td></tr>
+                        <tr style="opacity:0.6"><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--text-primary)">3. PORQUE LOS BANCOS SIGUEN</td><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)"><span class="tag tag-paused">⏸️ APAGADO</span></td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">$0.97</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">0</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--text-muted)">—</td><td class="mono" style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03)">0%</td><td style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.03);font-size:0.78rem;color:var(--red)">Solo 10 impr → Meta no lo distribuyó</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="reason-box">
+                <strong>🔴 Por qué se apagaron 3 ads:</strong> Los ads 1, 2 y 3 gastaron un total combinado de $43.02 sin generar ni un solo registro. Ad #1 tuvo un CTR decente (2.05%) pero el mensaje no conectó con la página de registro. Ad #2 tuvo buen CTR (3.03%) pero igualmente 0 conversiones — indica que el hook genera curiosidad pero no intención de compra. Ad #3 apenas recibió distribución de Meta (10 impresiones, $0.97) — el algoritmo lo descartó rápidamente. <strong>Decisión correcta: solo Ad #4 ("PORQUE ALGUNOS NEGOCIOS") convierte.</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- 04 FUNNEL PIPELINE -->
+    <div class="section">
+        <div class="section-label">
+            <span class="section-num">04</span>
+            <h2 class="section-title">Correlación Meta Ads → Pipeline GHL (desde 6 Marzo)</h2>
+        </div>
+
+        <!-- Quality cards -->
+        <div class="quality-grid" style="margin-bottom:20px;">
+            <div class="q-card" style="background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.2)">
+                <div class="q-num" style="color:var(--green)">5</div>
+                <div class="q-pct" style="color:var(--green)">25%</div>
+                <div class="q-label" style="color:var(--green)">Cualificados</div>
+            </div>
+            <div class="q-card" style="background:rgba(241,196,15,0.08);border:1px solid rgba(241,196,15,0.2)">
+                <div class="q-num" style="color:var(--yellow)">11</div>
+                <div class="q-pct" style="color:var(--yellow)">55%</div>
+                <div class="q-label" style="color:var(--yellow)">Pendientes</div>
+            </div>
+            <div class="q-card" style="background:rgba(231,76,60,0.08);border:1px solid rgba(231,76,60,0.15)">
+                <div class="q-num" style="color:var(--red)">2</div>
+                <div class="q-pct" style="color:var(--red)">10%</div>
+                <div class="q-label" style="color:var(--red)">Descalificados</div>
+            </div>
+            <div class="q-card" style="background:rgba(155,89,182,0.08);border:1px solid rgba(155,89,182,0.15)">
+                <div class="q-num" style="color:var(--purple)">2</div>
+                <div class="q-pct" style="color:var(--purple)">10%</div>
+                <div class="q-label" style="color:var(--purple)">Perdidos</div>
+            </div>
+        </div>
+
+        <!-- Funnel bars -->
+        <div class="card">
+            <div style="font-weight:700;margin-bottom:14px;font-size:0.9rem">Funnel de 20 Leads Meta Ads</div>
+            <div class="funnel-bar"><div class="funnel-label">LEAD</div><div class="funnel-track"><div class="funnel-fill" style="width:50%;background:var(--yellow)">50%</div></div><div class="funnel-count">10</div></div>
+            <div class="funnel-bar"><div class="funnel-label">CALIENTE SETTER</div><div class="funnel-track"><div class="funnel-fill" style="width:10%;background:var(--orange)">10%</div></div><div class="funnel-count">2</div></div>
+            <div class="funnel-bar"><div class="funnel-label">AGENDA CLOSER</div><div class="funnel-track"><div class="funnel-fill" style="width:10%;background:var(--green)">10%</div></div><div class="funnel-count">2</div></div>
+            <div class="funnel-bar"><div class="funnel-label">CALIENTE CLOSER</div><div class="funnel-track"><div class="funnel-fill" style="width:5%;background:linear-gradient(90deg,var(--green),var(--brand-green-light))">5%</div></div><div class="funnel-count">1</div></div>
+            <div class="funnel-bar"><div class="funnel-label">NO RESPONDE</div><div class="funnel-track"><div class="funnel-fill" style="width:5%;background:rgba(255,255,255,0.2)">5%</div></div><div class="funnel-count">1</div></div>
+            <div class="funnel-bar"><div class="funnel-label">NO EMPRESA</div><div class="funnel-track"><div class="funnel-fill" style="width:5%;background:var(--red)">5%</div></div><div class="funnel-count">1</div></div>
+            <div class="funnel-bar"><div class="funnel-label">MAL CRÉDITO</div><div class="funnel-track"><div class="funnel-fill" style="width:5%;background:var(--red)">5%</div></div><div class="funnel-count">1</div></div>
+            <div class="funnel-bar"><div class="funnel-label">NO INTERESADOS</div><div class="funnel-track"><div class="funnel-fill" style="width:10%;background:var(--purple)">10%</div></div><div class="funnel-count">2</div></div>
+        </div>
+    </div>
+
+    <!-- 05 DETALLE LEADS -->
+    <div class="section">
+        <div class="section-label">
+            <span class="section-num">05</span>
+            <h2 class="section-title">Detalle de Leads Meta Ads → GHL Pipeline</h2>
+        </div>
+        <div class="card" style="padding:0">
+            <div style="padding:14px 20px;border-bottom:1px solid var(--border-subtle);display:flex;gap:20px;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600">
+                <div style="width:30px">#</div><div style="min-width:160px">Nombre</div><div style="min-width:140px">Etapa GHL</div><div style="min-width:80px">Fecha</div><div>Campaña (UTM)</div>
+            </div>
+            <div class="lead-row"><div class="lead-emoji">🟢</div><div class="lead-name">Alba</div><div class="lead-stage" style="color:var(--green)">AGENDA CLOSER</div><div class="lead-date">Mar 11</div><div class="lead-src">CAMPAÑA FRIO VENTAS</div></div>
+            <div class="lead-row"><div class="lead-emoji">🟢</div><div class="lead-name">Sonaidad Novembre</div><div class="lead-stage" style="color:var(--green)">AGENDA CLOSER</div><div class="lead-date">Mar 11</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">🚫</div><div class="lead-name">Rene Marin</div><div class="lead-stage" style="color:var(--red)">MAL CRÉDITO</div><div class="lead-date">Mar 11</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">🟡</div><div class="lead-name">Katherine</div><div class="lead-stage">LEAD</div><div class="lead-date">Mar 10</div><div class="lead-src">CAMPAÑA FRIO VENTAS</div></div>
+            <div class="lead-row"><div class="lead-emoji">🟡</div><div class="lead-name">Carlos A Hernandez</div><div class="lead-stage">LEAD</div><div class="lead-date">Mar 10</div><div class="lead-src">CAMPAÑA FRIO VENTAS</div></div>
+            <div class="lead-row"><div class="lead-emoji">🟡</div><div class="lead-name">Harold Pena</div><div class="lead-stage">LEAD</div><div class="lead-date">Mar 10</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">🟡</div><div class="lead-name">Killdv Perez</div><div class="lead-stage">LEAD</div><div class="lead-date">Mar 10</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">🟡</div><div class="lead-name">Alejandro Lugo</div><div class="lead-stage">LEAD</div><div class="lead-date">Mar 10</div><div class="lead-src">CAMPAÑA FRIO VENTAS</div></div>
+            <div class="lead-row"><div class="lead-emoji">🟠</div><div class="lead-name">Ruben D. Lamazares</div><div class="lead-stage" style="color:var(--orange)">CALIENTE SETTER</div><div class="lead-date">Mar 9</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">💤</div><div class="lead-name">Jorge Coronel</div><div class="lead-stage" style="color:var(--purple)">NO INTERESADOS</div><div class="lead-date">Mar 9</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">��</div><div class="lead-name">Abelin Suero Perez</div><div class="lead-stage">LEAD</div><div class="lead-date">Mar 9</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">🟠</div><div class="lead-name">Noemi del Carmen</div><div class="lead-stage" style="color:var(--orange)">CALIENTE SETTER</div><div class="lead-date">Mar 9</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">💤</div><div class="lead-name">Alejandro Rodriguez</div><div class="lead-stage" style="color:var(--purple)">NO INTERESADOS</div><div class="lead-date">Mar 9</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">🟡</div><div class="lead-name">Rosemberg Consuegra</div><div class="lead-stage">LEAD</div><div class="lead-date">Mar 8</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">🟡</div><div class="lead-name">Nelson Garcia</div><div class="lead-stage">LEAD</div><div class="lead-date">Mar 6</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">🚫</div><div class="lead-name">Gloria E. Cristancho</div><div class="lead-stage" style="color:var(--red)">NO EMPRESA</div><div class="lead-date">Mar 6</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">⚪</div><div class="lead-name">Darwin</div><div class="lead-stage">NO RESPONDE</div><div class="lead-date">Mar 6</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">🟡</div><div class="lead-name">Yahaira Ramos</div><div class="lead-stage">LEAD</div><div class="lead-date">Mar 6</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">🔥</div><div class="lead-name">Danny Godos</div><div class="lead-stage" style="color:var(--green);font-weight:700">CALIENTE CLOSER</div><div class="lead-date">Mar 6</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+            <div class="lead-row"><div class="lead-emoji">🟡</div><div class="lead-name">Eduardo Fraga</div><div class="lead-stage">LEAD</div><div class="lead-date">Mar 6</div><div class="lead-src">TRAFICO FRIO MEDIA</div></div>
+        </div>
+    </div>
+
+    <!-- 06 ANÁLISIS -->
+    <div class="section">
+        <div class="section-label">
+            <span class="section-num">06</span>
+            <h2 class="section-title">Análisis & Acciones Prioritarias</h2>
+        </div>
+        <div class="card card-accent" style="border-image:linear-gradient(135deg,var(--green),var(--blue)) 1">
+            <div style="font-weight:700;font-size:0.95rem;margin-bottom:14px">🎯 Insights Clave</div>
+            <ul style="padding-left:20px;color:var(--text-secondary);font-size:0.88rem;line-height:1.8">
+                <li><strong style="color:var(--text-primary)">"SI ERES DUEÑO DE NEGOCIO" es el motor:</strong> genera 79% de los registros (15/19) a $8.19 — <span style="color:var(--green)">3.4x más barato que el benchmark</span>. Mantener activo y proteger de fatiga.</li>
+                <li><strong style="color:var(--text-primary)">La campaña PRUEBA validó ángulos:</strong> se probaron 4 hooks nuevos. 3 de 4 fallaron (0 registros con $43 gastados). El ganador "PORQUE ALGUNOS NEGOCIOS" convierte pero a $18.95 — <span style="color:var(--yellow)">2.3x más caro que el hero</span>.</li>
+                <li><strong style="color:var(--text-primary)">Pipeline caliente:</strong> Danny Godos está en <span style="color:var(--green)">CALIENTE CLOSER</span> — prospecto más avanzado. 2 leads agendaron hoy. 2 están con el setter.</li>
+                <li><strong style="color:var(--text-primary)">55% en limbo:</strong> 11 leads siguen en etapa LEAD sin avanzar. El setter/IA necesita activarse más agresivamente en primeras 24h.</li>
+                <li><strong style="color:var(--text-primary)">Descalificación baja:</strong> solo 10% descalificados (1 sin empresa, 1 mal crédito) — <span style="color:var(--green)">el targeting está atrayendo perfil correcto</span>.</li>
+            </ul>
+        </div>
+
+        <div style="margin-top:16px;display:grid;gap:12px">
+            <div class="card" style="display:flex;align-items:flex-start;gap:14px">
+                <div style="min-width:44px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:0.65rem;font-weight:700;text-transform:uppercase;background:rgba(231,76,60,0.15);color:var(--red);border:1px solid rgba(231,76,60,0.3)">P1</div>
+                <div><div style="font-weight:600;font-size:0.92rem;margin-bottom:4px">Activar seguimiento agresivo a los 11 leads en LEAD</div><div style="font-size:0.8rem;color:var(--text-secondary)">Que Nadia/setter contacte por WhatsApp los leads de Mar 8-10 que no han avanzado. Las primeras 48h son críticas. Si no se contactan hoy, la probabilidad de agendar cae un 50%.</div></div>
+            </div>
+            <div class="card" style="display:flex;align-items:flex-start;gap:14px">
+                <div style="min-width:44px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:0.65rem;font-weight:700;text-transform:uppercase;background:rgba(241,196,15,0.12);color:var(--yellow);border:1px solid rgba(241,196,15,0.25)">P2</div>
+                <div><div style="font-weight:600;font-size:0.92rem;margin-bottom:4px">Cerrar a Danny Godos (CALIENTE CLOSER)</div><div style="font-size:0.8rem;color:var(--text-secondary)">Lead más avanzado en el pipeline. Asegurar que el closer cierre esta semana. Valor potencial: $5,000.</div></div>
+            </div>
+            <div class="card" style="display:flex;align-items:flex-start;gap:14px">
+                <div style="min-width:44px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:0.65rem;font-weight:700;text-transform:uppercase;background:rgba(46,204,113,0.1);color:var(--green);border:1px solid rgba(46,204,113,0.2)">P3</div>
+                <div><div style="font-weight:600;font-size:0.92rem;margin-bottom:4px">Inyectar 3 creativos nuevos para diversificar</div><div style="font-size:0.8rem;color:var(--text-secondary)">El hero "SI ERES DUEÑO" lleva 6 días activo. Crear variaciones del mismo ángulo + 2 ángulos nuevos antes de que entre en fatiga. Formato: video testimonial + image ad + carrusel.</div></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-brand">Powered by <span>Sales Velocity</span> × CréditoTop</div>
+        <div style="font-size:0.68rem;color:var(--text-muted);margin-top:8px">Review V2 — 11 Marzo 2026 — Datos: Meta Ads API + GoHighLevel API — Pipeline correlacionado</div>
+    </footer>
+
+</div>
+</body>
+</html>
