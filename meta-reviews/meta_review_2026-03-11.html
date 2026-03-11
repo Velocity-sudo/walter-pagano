@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Ads Review — Walter Pagano | 11 Marzo 2026</title>
+    <meta name="description" content="Review semanal de Meta Ads para CréditoTop — Walter Pagano. Semana del 11 de marzo 2026.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-green: #2ECC71;
+            --brand-green-deep: #1FA85A;
+            --brand-green-light: #54D98C;
+            --brand-green-glow: rgba(46, 204, 113, 0.15);
+            --brand-gradient: linear-gradient(135deg, #2ECC71, #1FA85A);
+            --bg-primary: #0a0e1a;
+            --bg-card: rgba(16, 22, 40, 0.85);
+            --bg-card-hover: rgba(20, 28, 50, 0.95);
+            --border-subtle: rgba(46, 204, 113, 0.12);
+            --border-active: rgba(46, 204, 113, 0.35);
+            --text-primary: #f0f2f5;
+            --text-secondary: rgba(240, 242, 245, 0.65);
+            --text-muted: rgba(240, 242, 245, 0.4);
+            --status-green: #2ECC71;
+            --status-yellow: #F1C40F;
+            --status-red: #E74C3C;
+            --status-blue: #3498DB;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Animated background mesh */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(46, 204, 113, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(31, 168, 90, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(46, 204, 113, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ====== HEADER ====== */
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 100px;
+            padding: 6px 18px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--brand-green);
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-badge .dot {
+            width: 6px; height: 6px;
+            background: var(--brand-green);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(46, 204, 113, 0); }
+        }
+
+        .header h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header h1 span {
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-sub {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .review-number {
+            display: inline-block;
+            background: var(--brand-gradient);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 100px;
+            margin-left: 8px;
+            vertical-align: middle;
+            letter-spacing: 0.05em;
+        }
+
+        /* ====== VERDICT SECTION ====== */
+        .verdict {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 32px;
+            margin: 32px 0;
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .verdict::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--brand-gradient);
+        }
+
+        .verdict-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .verdict-icon {
+            width: 56px; height: 56px;
+            background: rgba(241, 196, 15, 0.12);
+            border: 1px solid rgba(241, 196, 15, 0.25);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .verdict-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .verdict-status {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--status-yellow);
+        }
+
+        .verdict-text {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--text-secondary);
+        }
+
+        .verdict-text strong { color: var(--text-primary); }
+        .verdict-text .highlight-green { color: var(--status-green); font-weight: 600; }
+        .verdict-text .highlight-yellow { color: var(--status-yellow); font-weight: 600; }
+        .verdict-text .highlight-red { color: var(--status-red); font-weight: 600; }
+
+        /* ====== SECTION HEADERS ====== */
+        .section { margin: 40px 0; }
+
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .section-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--brand-green);
+            background: var(--brand-green-glow);
+            border: 1px solid var(--border-subtle);
+            padding: 4px 10px;
+            border-radius: 8px;
+            letter-spacing: 0.05em;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        /* ====== KPI GRID ====== */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 16px;
+        }
+
+        .kpi-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kpi-card:hover {
+            border-color: var(--border-active);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(46, 204, 113, 0.08);
+        }
+
+        .kpi-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .kpi-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .kpi-benchmark {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        .kpi-benchmark span {
+            font-weight: 600;
+        }
+
+        .kpi-delta {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-top: 6px;
+        }
+
+        .delta-up { background: rgba(46, 204, 113, 0.12); color: var(--status-green); }
+        .delta-down { background: rgba(231, 76, 60, 0.12); color: var(--status-red); }
+        .delta-neutral { background: rgba(241, 196, 15, 0.12); color: var(--status-yellow); }
+
+        .status-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            position: absolute;
+            top: 16px; right: 16px;
+        }
+
+        .status-green { background: var(--status-green); box-shadow: 0 0 8px rgba(46, 204, 113, 0.5); }
+        .status-yellow { background: var(--status-yellow); box-shadow: 0 0 8px rgba(241, 196, 15, 0.5); }
+        .status-red { background: var(--status-red); box-shadow: 0 0 8px rgba(231, 76, 60, 0.5); }
+
+        /* ====== CAMPAIGN TABLE ====== */
+        .table-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+        }
+
+        .table-wrapper table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .table-wrapper th {
+            background: rgba(46, 204, 113, 0.06);
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .table-wrapper td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            color: var(--text-secondary);
+        }
+
+        .table-wrapper tr:hover td {
+            background: rgba(46, 204, 113, 0.03);
+        }
+
+        .table-wrapper td:first-child { color: var(--text-primary); font-weight: 500; }
+
+        .campaign-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .tag-hero { background: rgba(46, 204, 113, 0.12); color: var(--status-green); }
+        .tag-testing { background: rgba(52, 152, 219, 0.12); color: var(--status-blue); }
+        .tag-lal { background: rgba(155, 89, 182, 0.12); color: #9B59B6; }
+        .tag-clone { background: rgba(241, 196, 15, 0.12); color: var(--status-yellow); }
+
+        .td-mono {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+        }
+
+        /* ====== AI ANALYSIS CARD ====== */
+        .ai-card {
+            background: linear-gradient(135deg, rgba(16, 22, 40, 0.9), rgba(20, 30, 55, 0.85));
+            border: 1px solid var(--border-active);
+            border-radius: 20px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(46, 204, 113, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .ai-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--brand-green-glow);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 4px 12px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--brand-green);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 20px;
+        }
+
+        .ai-content h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 20px 0 10px;
+            color: var(--text-primary);
+        }
+
+        .ai-content p, .ai-content li {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .ai-content strong { color: var(--text-primary); }
+        .ai-content ul { padding-left: 20px; }
+        .ai-content li { margin-bottom: 8px; }
+
+        .benchmark-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.85rem;
+        }
+
+        .benchmark-table th {
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .benchmark-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            color: var(--text-secondary);
+        }
+
+        .elite { color: var(--status-green); font-weight: 700; }
+        .competitive { color: var(--status-blue); font-weight: 600; }
+        .high-alert { color: var(--status-red); font-weight: 700; }
+
+        /* ====== ACTIONS TABLE ====== */
+        .action-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .action-row:hover {
+            border-color: var(--border-active);
+            transform: translateX(4px);
+        }
+
+        .action-priority {
+            min-width: 48px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            flex-shrink: 0;
+        }
+
+        .priority-urgent { background: rgba(231, 76, 60, 0.15); color: var(--status-red); border: 1px solid rgba(231, 76, 60, 0.3); }
+        .priority-high { background: rgba(241, 196, 15, 0.12); color: var(--status-yellow); border: 1px solid rgba(241, 196, 15, 0.25); }
+        .priority-medium { background: rgba(46, 204, 113, 0.1); color: var(--status-green); border: 1px solid rgba(46, 204, 113, 0.2); }
+
+        .action-content { flex: 1; }
+        .action-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+        .action-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
+        .action-impact { font-size: 0.72rem; color: var(--brand-green); font-weight: 500; margin-top: 6px; }
+
+        /* ====== PROGRESS TRACKER ====== */
+        .progress-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .progress-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .progress-item:last-child { border-bottom: none; }
+
+        .progress-check {
+            width: 24px; height: 24px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .check-done { background: rgba(46, 204, 113, 0.15); color: var(--status-green); border: 1px solid rgba(46, 204, 113, 0.3); }
+        .check-partial { background: rgba(241, 196, 15, 0.12); color: var(--status-yellow); border: 1px solid rgba(241, 196, 15, 0.25); }
+        .check-pending { background: rgba(231, 76, 60, 0.1); color: var(--status-red); border: 1px solid rgba(231, 76, 60, 0.2); }
+
+        .progress-label { font-size: 0.88rem; color: var(--text-secondary); }
+        .progress-label strong { color: var(--text-primary); }
+
+        /* ====== FOOTER ====== */
+        .footer {
+            text-align: center;
+            padding: 48px 20px;
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 60px;
+        }
+
+        .footer-brand {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .footer-brand span { color: var(--brand-green); }
+        .footer-meta { font-size: 0.7rem; color: var(--text-muted); margin-top: 8px; }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .container { padding: 12px; }
+            .header { padding: 40px 12px 24px; }
+            .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .kpi-value { font-size: 1.4rem; }
+            .verdict, .ai-card { padding: 20px; }
+            .action-row { flex-direction: column; gap: 10px; }
+            .table-wrapper { overflow-x: auto; }
+            .table-wrapper table { min-width: 700px; }
+        }
+
+        @media (max-width: 480px) {
+            .kpi-grid { grid-template-columns: 1fr 1fr; }
+            .header h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ====== HEADER ====== -->
+    <header class="header">
+        <div class="header-badge">
+            <span class="dot"></span>
+            Sales Velocity × CréditoTop
+        </div>
+        <h1>META ADS <span>REVIEW</span></h1>
+        <p class="header-sub">
+            Walter Pagano — Semana del 11 de Marzo 2026
+            <span class="review-number">REVIEW #1</span>
+        </p>
+    </header>
+
+    <!-- ====== 01 RESUMEN EJECUTIVO ====== -->
+    <div class="verdict">
+        <div class="verdict-header">
+            <div class="verdict-icon">🟡</div>
+            <div>
+                <div class="verdict-title">01 — Resumen Ejecutivo</div>
+                <div class="verdict-status">ATENCIÓN — Señales de Fatiga Creativa</div>
+            </div>
+        </div>
+        <p class="verdict-text">
+            Walter está operando con un <strong>CPL élite</strong> de <span class="highlight-green">$9.89 (30d)</span> — muy por debajo del benchmark de la industria financiera de $27.66. Su CTR de <span class="highlight-green">2.87%</span> duplica el promedio del sector (0.85-1.30%). Sin embargo, <span class="highlight-yellow">el CPL de 7 días subió 25.8%</span> de $10.38 a $13.06, lo que indica <span class="highlight-yellow">fatiga creativa inminente</span> en el anuncio principal, que genera el 73% de todos los leads. El CPM alto ($50.69 vs benchmark $23.00) confirma que Meta está penalizando por falta de diversidad creativa. <strong>Acción inmediata:</strong> inyectar 3-5 creativos radicalmente distintos esta semana para diversificar señales antes de que el CPL se dispare.
+        </p>
+    </div>
+
+    <!-- ====== 02 MÉTRICAS CLAVE 7D ====== -->
+    <div class="section">
+        <div class="section-label">
+            <span class="section-num">02</span>
+            <h2 class="section-title">Métricas Clave — Últimos 7 Días</h2>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="status-dot status-yellow"></div>
+                <div class="kpi-label">CPL</div>
+                <div class="kpi-value" style="color: var(--status-yellow);">$13.06</div>
+                <span class="kpi-delta delta-neutral">↑ 25.8% vs sem. ant.</span>
+                <div class="kpi-benchmark">Benchmark: <span>$27.66</span></div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="status-dot status-green"></div>
+                <div class="kpi-label">CTR</div>
+                <div class="kpi-value" style="color: var(--status-green);">2.87%</div>
+                <span class="kpi-delta delta-up">↑ vs 2.77% (30d)</span>
+                <div class="kpi-benchmark">Benchmark: <span>0.85-1.30%</span></div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="status-dot status-green"></div>
+                <div class="kpi-label">CPC</div>
+                <div class="kpi-value" style="color: var(--status-green);">$1.76</div>
+                <span class="kpi-delta delta-up">Rango óptimo</span>
+                <div class="kpi-benchmark">Benchmark: <span>$1.22-3.77</span></div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="status-dot status-red"></div>
+                <div class="kpi-label">CPM</div>
+                <div class="kpi-value" style="color: var(--status-red);">$50.69</div>
+                <span class="kpi-delta delta-down">2.2x promedio USA</span>
+                <div class="kpi-benchmark">Benchmark: <span>$23.00</span></div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="status-dot status-green"></div>
+                <div class="kpi-label">Leads</div>
+                <div class="kpi-value">25</div>
+                <span class="kpi-delta delta-up">↑ 0.8% vs sem. ant.</span>
+                <div class="kpi-benchmark">30d: <span>120 leads</span></div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="status-dot status-green"></div>
+                <div class="kpi-label">Gasto 7d</div>
+                <div class="kpi-value">$327</div>
+                <span class="kpi-delta delta-neutral">↑ 4.5% vs sem. ant.</span>
+                <div class="kpi-benchmark">30d: <span>$1,187</span></div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="status-dot status-green"></div>
+                <div class="kpi-label">Ads Activos</div>
+                <div class="kpi-value">11</div>
+                <span class="kpi-delta delta-up">3 campañas</span>
+                <div class="kpi-benchmark">Target: <span>10-15</span></div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="status-dot status-green"></div>
+                <div class="kpi-label">Frecuencia</div>
+                <div class="kpi-value">1.15</div>
+                <span class="kpi-delta delta-up">Saludable</span>
+                <div class="kpi-benchmark">Alerta: <span>&gt;3.0</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== 03 RENDIMIENTO POR CAMPAÑA ====== -->
+    <div class="section">
+        <div class="section-label">
+            <span class="section-num">03</span>
+            <h2 class="section-title">Rendimiento por Campaña — 7 Días</h2>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Anuncio</th>
+                        <th>Campaña</th>
+                        <th>Gasto</th>
+                        <th>Leads</th>
+                        <th>CPL</th>
+                        <th>CTR</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SI ERES DUENO DE NEGOCIO</strong></td>
+                        <td><span class="campaign-tag tag-hero">🏆 HERO</span></td>
+                        <td class="td-mono">$181.98</td>
+                        <td class="td-mono"><strong>19</strong></td>
+                        <td class="td-mono" style="color: var(--status-green);">$9.58</td>
+                        <td class="td-mono">2.83%</td>
+                        <td><span class="status-dot status-green" style="position:static;display:inline-block;"></span></td>
+                    </tr>
+                    <tr>
+                        <td>4. PORQUE ALGUNOS NEGOCIOS</td>
+                        <td><span class="campaign-tag tag-testing">CBO TEST</span></td>
+                        <td class="td-mono">$75.14</td>
+                        <td class="td-mono"><strong>4</strong></td>
+                        <td class="td-mono" style="color: var(--status-yellow);">$18.78</td>
+                        <td class="td-mono">3.23%</td>
+                        <td><span class="status-dot status-yellow" style="position:static;display:inline-block;"></span></td>
+                    </tr>
+                    <tr>
+                        <td>1. SI TU NEGOCIO NO CRECE</td>
+                        <td><span class="campaign-tag tag-testing">CBO TEST</span></td>
+                        <td class="td-mono">$31.03</td>
+                        <td class="td-mono">0</td>
+                        <td class="td-mono" style="color: var(--text-muted);">—</td>
+                        <td class="td-mono">2.05%</td>
+                        <td><span class="status-dot status-red" style="position:static;display:inline-block;"></span></td>
+                    </tr>
+                    <tr>
+                        <td>2. SI TE DIJERA QUE MUCHOS</td>
+                        <td><span class="campaign-tag tag-testing">CBO TEST</span></td>
+                        <td class="td-mono">$11.01</td>
+                        <td class="td-mono">0</td>
+                        <td class="td-mono" style="color: var(--text-muted);">—</td>
+                        <td class="td-mono">3.03%</td>
+                        <td><span class="status-dot status-yellow" style="position:static;display:inline-block;"></span></td>
+                    </tr>
+                    <tr>
+                        <td>PORQUE ALGUNOS NEGOCIOS</td>
+                        <td><span class="campaign-tag tag-lal">LOOKALIKE</span></td>
+                        <td class="td-mono">$6.28</td>
+                        <td class="td-mono"><strong>2</strong></td>
+                        <td class="td-mono" style="color: var(--status-green);">$3.14</td>
+                        <td class="td-mono" style="color: var(--status-green);">8.06%</td>
+                        <td><span class="status-dot status-green" style="position:static;display:inline-block;"></span></td>
+                    </tr>
+                    <tr>
+                        <td>ANA DE ORBEGOSO</td>
+                        <td><span class="campaign-tag tag-lal">LOOKALIKE</span></td>
+                        <td class="td-mono">$13.82</td>
+                        <td class="td-mono">0</td>
+                        <td class="td-mono" style="color: var(--text-muted);">—</td>
+                        <td class="td-mono">3.42%</td>
+                        <td><span class="status-dot status-yellow" style="position:static;display:inline-block;"></span></td>
+                    </tr>
+                    <tr style="opacity: 0.5;">
+                        <td>4 ads (CBO clon)</td>
+                        <td><span class="campaign-tag tag-clone">CLONE</span></td>
+                        <td class="td-mono">$6.34</td>
+                        <td class="td-mono">0</td>
+                        <td class="td-mono" style="color: var(--text-muted);">—</td>
+                        <td class="td-mono">~1.2%</td>
+                        <td><span class="status-dot status-red" style="position:static;display:inline-block;"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ====== 04 DIAGNÓSTICO AI ====== -->
+    <div class="section">
+        <div class="section-label">
+            <span class="section-num">04</span>
+            <h2 class="section-title">Diagnóstico del Experto — NotebookLM</h2>
+        </div>
+
+        <div class="ai-card">
+            <div class="ai-badge">
+                🧠 Meta Ads Mastery 2026 — 51 fuentes
+            </div>
+
+            <div class="ai-content">
+                <h4>Comparativa vs Benchmarks 2026 (Servicios Financieros USA)</h4>
+
+                <table class="benchmark-table">
+                    <thead>
+                        <tr>
+                            <th>Métrica</th>
+                            <th>Tu Cliente (30d)</th>
+                            <th>Benchmark 2026</th>
+                            <th>Veredicto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CTR</td>
+                            <td class="td-mono"><strong>2.77%</strong></td>
+                            <td class="td-mono">0.85 - 1.30%</td>
+                            <td class="elite">🟢 ÉLITE</td>
+                        </tr>
+                        <tr>
+                            <td>CPL</td>
+                            <td class="td-mono"><strong>$9.89</strong></td>
+                            <td class="td-mono">$27.66</td>
+                            <td class="elite">🟢 ÉLITE</td>
+                        </tr>
+                        <tr>
+                            <td>CPC</td>
+                            <td class="td-mono"><strong>$1.76</strong></td>
+                            <td class="td-mono">$1.22 - $3.77</td>
+                            <td class="competitive">🔵 COMPETITIVO</td>
+                        </tr>
+                        <tr>
+                            <td>CPM</td>
+                            <td class="td-mono"><strong>$50.69</strong></td>
+                            <td class="td-mono">$23.00</td>
+                            <td class="high-alert">🔴 ALTO</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Diagnóstico de Rendimiento</h4>
+                <ul>
+                    <li><strong>Eficiencia de Conversión:</strong> El CPL de $9.89 es extremadamente bajo comparado con el promedio de la industria de $27.66. Un CTR de 2.77% en finanzas (donde el promedio es inferior al 1%) indica que la <strong>propuesta de valor y el hook están resonando profundamente</strong> con el empresario hispano.</li>
+                    <li><strong>El Problema del CPM Elevado:</strong> Un CPM de $50.69 duplica el promedio USA ($23). En la era de Andromeda, Meta cobra un "impuesto" cuando detecta <strong>similitud creativa</strong> o competencia en nichos de alta puja. Esto confirma que, aunque el anuncio es bueno, el costo de alcanzar esa audiencia sube por la falta de diversidad visual.</li>
+                    <li><strong>Concentración Creativa (Riesgo del 73%):</strong> Es normal que Meta concentre 55-80% del presupuesto en los mejores creativos. Sin embargo, depender de un solo anuncio para el 73% de leads es peligroso — la <strong>fatiga creativa puede ocurrir en 10-14 días</strong> con presupuestos constantes, disparando el CPL abruptamente.</li>
+                    <li><strong>Estructura Subóptima:</strong> La tendencia 2026 es simplificación extrema. Los Lookalikes (LAL) han perdido efectividad frente al <strong>Broad Targeting</strong>, ya que Andromeda es mejor encontrando clientes por el contenido del anuncio. Tener campañas separadas fragmenta el aprendizaje y genera competencia interna.</li>
+                </ul>
+
+                <h4>Bidding Strategy para High Ticket ($3K-5K)</h4>
+                <p>Para un funnel de VSL → Cita → Cierre, el objetivo no es volumen barato sino <strong>calidad de leads calificados</strong>. Si estás usando Lowest Cost, podrías estar atrayendo leads que nunca agendarán. Se recomienda probar <strong>Cost Cap</strong> y tener <strong>CAPI (Conversions API)</strong> activo para enviar datos de cierre desde GHL de vuelta a Meta. Sin CAPI, las cuentas pierden hasta un 40% de señales, elevando artificialmente los CPMs.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== 05 ACCIONES PRIORITARIAS ====== -->
+    <div class="section">
+        <div class="section-label">
+            <span class="section-num">05</span>
+            <h2 class="section-title">Acciones Prioritarias — Próximas 2 Semanas</h2>
+        </div>
+
+        <div class="action-row">
+            <div class="action-priority priority-urgent">🔴</div>
+            <div class="action-content">
+                <div class="action-title">1. Inyectar 3-5 Creativos Radicalmente Distintos</div>
+                <div class="action-desc">No variaciones del mismo anuncio. Formatos nuevos: UGC testimonial real, anuncio de solo texto con fondo de color (pattern interrupt), comparativa "antes vs después" de obtener capital, video de Walter respondiendo objeciones. El objetivo es darle a Andromeda nuevos "tickets" de entrada a la subasta.</div>
+                <div class="action-impact">⚡ Impacto: Bajar CPL 20-30%, reducir CPM | Esfuerzo: 2-3 días de grabación + edición</div>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="action-priority priority-urgent">🔴</div>
+            <div class="action-content">
+                <div class="action-title">2. Consolidar a 1 Campaña CBO Broad</div>
+                <div class="action-desc">Apagar la campaña CBO clon (que no genera resultados: $6.34 gastados, 0 leads). Evaluar consolidar todo en una sola CBO con segmentación abierta (solo país + edad). Los Lookalikes en 2026 son menos efectivos que dejar que los creativos actúen como la herramienta de segmentación.</div>
+                <div class="action-impact">⚡ Impacto: Unificar aprendizaje del algoritmo, reducir fragmentación | Esfuerzo: 30 min</div>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="action-priority priority-high">🟡</div>
+            <div class="action-content">
+                <div class="action-title">3. Evaluar el CBO de Testeo</div>
+                <div class="action-desc">"Porque algunos negocios" tiene 4 leads a $18.78 con CTR 3.23% — prometedor pero necesita más data. "Si tu negocio no crece" ($31 gastados, 0 leads, CTR bajo 2.05%) — dar 48h más, si no convierte, pausar. "Si te dijera que muchos" ($11 gastados, CTR 3.03%) — necesita más presupuesto para ser conclusivo.</div>
+                <div class="action-impact">⚡ Impacto: Identificar el segundo ganador para escalar | Esfuerzo: Monitoreo diario</div>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="action-priority priority-high">🟡</div>
+            <div class="action-content">
+                <div class="action-title">4. Implementar CAPI (Conversions API)</div>
+                <div class="action-desc">Conectar GHL con Meta vía CAPI para enviar eventos de conversión offline (agenda, cierre, pago). Sin esto, Meta pierde hasta 40% de señales de optimización. Esto permitirá probar bidding de Cost Cap y optimizar por calidad de lead, no solo volumen.</div>
+                <div class="action-impact">⚡ Impacto: Mejorar calidad de leads y bajar CPM | Esfuerzo: 2-4 horas setup</div>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="action-priority priority-medium">🟢</div>
+            <div class="action-content">
+                <div class="action-title">5. Preparar Retargeting con Creativos Específicos</div>
+                <div class="action-desc">Walter nunca ha usado retargeting. Con el pixel bien configurado y data acumulada, crear campaña de retargeting con: testimonios de clientes exitosos, respuesta a objeciones comunes ("$3K-5K es mucho" → ROI de +$100K en capital), urgencia/escasez ("plazas limitadas").</div>
+                <div class="action-impact">⚡ Impacto: Recuperar leads calientes que no convirtieron | Esfuerzo: Necesita grabación de contenido</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== 06 SEGUIMIENTO DE ACUERDOS ====== -->
+    <div class="section">
+        <div class="section-label">
+            <span class="section-num">06</span>
+            <h2 class="section-title">Seguimiento de Acuerdos — Reunión 6 Marzo</h2>
+        </div>
+
+        <div class="progress-card">
+            <div class="progress-item">
+                <div class="progress-check check-done">✓</div>
+                <div class="progress-label"><strong>Duplicar campaña CBO con 3 ads inactivos</strong> — Walter activó la campaña CBO de testeo con los 4 ángulos. Resultados parciales a 5 días.</div>
+            </div>
+            <div class="progress-item">
+                <div class="progress-check check-partial">◐</div>
+                <div class="progress-label"><strong>Pasar carpeta de anuncios ganadores</strong> — Walter comprometido a compartir carpeta de ads exitosos pasados. <em>Verificar en la reunión de hoy.</em></div>
+            </div>
+            <div class="progress-item">
+                <div class="progress-check check-partial">◐</div>
+                <div class="progress-label"><strong>Analizar carpeta y definir ángulos</strong> — Pendiente de recibir carpeta. Ángulos preliminares ya identificados en reunión.</div>
+            </div>
+            <div class="progress-item">
+                <div class="progress-check check-pending">✕</div>
+                <div class="progress-label"><strong>Guión de YouTube para grabar</strong> — Esteban debía pasarlo para fin de semana 8-9 marzo. <em>Verificar estado.</em></div>
+            </div>
+            <div class="progress-item">
+                <div class="progress-check check-pending">✕</div>
+                <div class="progress-label"><strong>Campaña de retargeting</strong> — Necesita creativos grabados. Aún no iniciada.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== 07 PIPELINE SNAPSHOT ====== -->
+    <div class="section">
+        <div class="section-label">
+            <span class="section-num">07</span>
+            <h2 class="section-title">Pipeline GHL — Snapshot</h2>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">Leads Totales</div>
+                <div class="kpi-value" style="color: var(--brand-green);">2,110</div>
+                <span class="kpi-delta delta-up">↑ 82 vs reunión (2,028)</span>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Clientes Activos</div>
+                <div class="kpi-value" style="color: var(--brand-green);">66</div>
+                <span class="kpi-delta delta-up">↑ 1.5% vs sem. ant.</span>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Valor Pipeline</div>
+                <div class="kpi-value">$5.93M</div>
+                <div class="kpi-benchmark">Total acumulado</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Conversión Lead→Client</div>
+                <div class="kpi-value">3.13%</div>
+                <div class="kpi-benchmark">Target Q2: <span>4-5%</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <div class="footer-brand">
+            Generado por <span>Sales Velocity</span> × <span>Antigravity</span>
+        </div>
+        <div class="footer-meta">
+            NotebookLM: Meta Ads Mastery 2026 (51 fuentes) · Review #1 (Baseline) · 11 Marzo 2026
+        </div>
+    </footer>
+
+</div>
+
+<!-- ====== REVIEW DATA (for future comparison) ====== -->
+<script type="application/json" id="review-data">
+{
+    "review_date": "2026-03-11",
+    "review_number": 1,
+    "client": "Walter Pagano",
+    "brand": "CréditoTop",
+    "industry": "Servicios Financieros",
+    "country": "USA",
+    "ticket": "$3,000-5,000",
+    "monthly_budget": "$1,000-1,500",
+    "metrics_7d": {
+        "cpl": 13.06,
+        "ctr": 2.87,
+        "cpc": 1.76,
+        "cpm": 50.69,
+        "spend": 326.57,
+        "leads": 25,
+        "frequency": 1.15,
+        "active_ads": 11,
+        "active_campaigns": 3
+    },
+    "metrics_30d": {
+        "cpl": 9.89,
+        "ctr": 2.77,
+        "spend": 1186.75,
+        "leads": 120,
+        "active_ads": 14
+    },
+    "pipeline": {
+        "total_leads": 2110,
+        "total_clients": 66,
+        "pipeline_value": 5930000,
+        "lead_to_client_pct": 3.13
+    },
+    "benchmarks": {
+        "cpl": 27.66,
+        "ctr_low": 0.85,
+        "ctr_high": 1.30,
+        "cpc_low": 1.22,
+        "cpc_high": 3.77,
+        "cpm_avg_usa": 23.00
+    },
+    "deltas_vs_previous": {
+        "cpl_pct": 25.8,
+        "leads_pct": 0.8,
+        "clients_pct": 1.5,
+        "spend_pct": 4.5
+    },
+    "hero_ad": {
+        "name": "SI ERES DUENO DE NEGOCIO",
+        "spend_7d": 181.98,
+        "leads_7d": 19,
+        "cpl_7d": 9.58,
+        "ctr_7d": 2.83,
+        "pct_of_total_leads": 73
+    },
+    "actions": [
+        {"priority": "urgent", "action": "Inyectar 3-5 creativos radicalmente distintos", "status": "pending"},
+        {"priority": "urgent", "action": "Consolidar a 1 campaña CBO Broad", "status": "pending"},
+        {"priority": "high", "action": "Evaluar CBO de testeo (dar 48h a ads sin conversión)", "status": "pending"},
+        {"priority": "high", "action": "Implementar CAPI (Conversions API)", "status": "pending"},
+        {"priority": "medium", "action": "Preparar retargeting con creativos específicos", "status": "pending"}
+    ],
+    "agreements_march6": [
+        {"item": "Duplicar campaña CBO con 3 ads", "status": "done"},
+        {"item": "Pasar carpeta de anuncios ganadores", "status": "partial"},
+        {"item": "Analizar carpeta y definir ángulos", "status": "partial"},
+        {"item": "Guión de YouTube para grabar", "status": "pending"},
+        {"item": "Campaña de retargeting", "status": "pending"}
+    ]
+}
+</script>
+
+</body>
+</html>
